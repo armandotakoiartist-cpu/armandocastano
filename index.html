@@ -1,0 +1,3239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Armando Castaño · Director Creativo y Director de Arte</title>
+  <meta name="description" content="Portafolio de Armando Castaño: Director Creativo y Art Director con más de 10 años de experiencia en branding, diseño editorial y motion graphics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Potta+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --dark: #1a0f2e;
+      --takoi: #6A4491;
+      --lav: #E8E3EE;
+      --off: #F5F0E8;
+      --lav2: #E2DCEA;
+      --mid: #9B7FB3;
+      --gray: #555;
+      --bg: #F8F5FB;
+      --potta: "Potta One", cursive;
+      --body: "Poppins", system-ui, sans-serif;
+      --cond: "Potta One", cursive;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      font-family: var(--body);
+      background: var(--bg);
+      color: #000;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    ::selection {
+      background: var(--takoi);
+      color: var(--off);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== BOTONES UNIFICADOS ===== */
+    .pill,
+    #lang,
+    form button,
+    .btn-contact {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-weight: 600;
+      text-transform: lowercase;
+      letter-spacing: 0;
+      font-size: .85rem;
+      line-height: 1;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      padding: 0 20px;
+      border-radius: 30px;
+      transition: .25s;
+      background: transparent;
+      border: 1.5px solid rgba(245, 240, 232, .6);
+      color: var(--off);
+      cursor: pointer;
+    }
+
+    .pill {
+      width: 220px;
+    }
+
+    .pill:hover,
+    .btn-contact:hover,
+    #lang:hover {
+      background: rgba(245, 240, 232, .12);
+      border-color: var(--off);
+    }
+
+    .pill.sel {
+      background: var(--takoi);
+      color: var(--off);
+      border: 2px solid var(--takoi);
+    }
+
+    .pill.sel:hover {
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .pill.outline {
+      border: 2px solid var(--takoi);
+      color: var(--takoi);
+      background: transparent;
+    }
+
+    .pill.outline:hover {
+      background: var(--takoi);
+      color: #fff;
+    }
+
+    .pill.more {
+      margin-top: 64px;
+      border: 2px solid var(--takoi);
+      color: var(--takoi);
+      background: transparent;
+    }
+
+    .pill.more:hover {
+      background: var(--takoi);
+      color: #fff;
+    }
+
+    .pill.ghost {
+      align-self: flex-start;
+      border: 2px solid #000;
+      color: #000;
+      background: transparent;
+    }
+
+    .pill.ghost:hover {
+      background: #000;
+      color: var(--off);
+    }
+
+    .pill.cta {
+      position: relative;
+      z-index: 2;
+      margin-top: 48px;
+      background: transparent;
+      color: var(--off);
+      border: 1.5px solid rgba(245, 240, 232, .6);
+      animation: tagin .6s 2.4s both;
+    }
+
+    .pill.cta:hover {
+      background: rgba(245, 240, 232, .12);
+      border-color: var(--off);
+    }
+
+    /* ===== NAV (glass / transparente) ===== */
+    header {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      z-index: 100;
+      background: transparent;
+    }
+
+    .nav {
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 14px 0 26px;
+      border-radius: 40px;
+      border: 1px solid rgba(232, 227, 238, .22);
+      background: linear-gradient(100deg, rgba(106, 68, 145, .38) 0%, rgba(154, 112, 214, .22) 35%, rgba(26, 15, 46, .35) 100%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      backdrop-filter: blur(16px) saturate(140%);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .08);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      color: var(--off);
+      line-height: 1.15;
+    }
+
+    .brand b {
+      font-size: .9rem;
+      letter-spacing: .07em;
+      font-weight: 700;
+    }
+
+    .brand small {
+      font-size: .66rem;
+      opacity: .75;
+    }
+
+    .brand:hover b {
+      color: var(--lav2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav a {
+      position: relative;
+      color: var(--off);
+      font-size: .84rem;
+      font-weight: 600;
+      padding: 4px 0;
+      white-space: nowrap;
+      opacity: .92;
+      transition: opacity .2s;
+    }
+
+    nav a:hover { opacity: 1; }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      height: 2px;
+      width: 0;
+      background: #fff;
+      transition: width .25s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Selector de idioma */
+    .lang-wrap {
+      position: relative;
+    }
+
+    #lang {
+      height: 40px;
+      width: auto;
+      min-width: 66px;
+      padding: 0 12px 0 14px;
+      gap: 8px;
+      border-radius: 14px;
+      text-transform: uppercase;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--off);
+      background: rgba(26, 15, 46, .35);
+      border: 1px solid rgba(232, 227, 238, .3);
+    }
+
+    #lang:hover {
+      background: rgba(245, 240, 232, .14);
+      border-color: rgba(245, 240, 232, .6);
+    }
+
+    #lang .chev {
+      font-size: .7rem;
+      transition: transform .2s;
+    }
+
+    .lang-wrap.open #lang .chev { transform: rotate(180deg); }
+
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 130px;
+      padding: 6px;
+      border-radius: 14px;
+      background: rgba(26, 15, 46, .92);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(232, 227, 238, .25);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .4);
+      display: none;
+    }
+
+    .lang-wrap.open .lang-menu { display: block; }
+
+    .lang-menu button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 0;
+      color: var(--off);
+      font-family: var(--body);
+      font-size: .8rem;
+      font-weight: 600;
+      padding: 9px 12px;
+      border-radius: 9px;
+      cursor: pointer;
+      opacity: .75;
+    }
+
+    .lang-menu button:hover { background: rgba(245, 240, 232, .12); opacity: 1; }
+    .lang-menu button.on { opacity: 1; color: var(--lav2); }
+    .lang-menu button.on::after { content: "✓"; }
+
+    #burger {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    #inicio {
+      position: relative;
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 16px 56px;
+      overflow: hidden;
+    }
+
+    .mega {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: clamp(5rem, 18vw, 15rem);
+      letter-spacing: -.05em;
+      color: rgba(255, 255, 255, .035);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .halo {
+      position: absolute;
+      width: min(620px, 90vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, .16), transparent 70%);
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      50% {
+        transform: scale(1.12);
+        opacity: .7;
+      }
+    }
+
+    .banner {
+      --mx: 0;
+      --my: 0;
+      position: relative;
+      z-index: 2;
+      container-type: inline-size;
+      width: min(980px, 94vw, calc((100vh - 250px) * 1.78));
+      padding: 14px;
+    }
+
+    .frame {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, .5);
+      animation: frame 1s .1s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    @keyframes frame {
+      from {
+        clip-path: inset(0 100% 100% 0);
+      }
+
+      to {
+        clip-path: inset(0);
+      }
+    }
+
+    .h {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--lav2);
+      border: 2px solid var(--takoi);
+      animation: pop .4s both, blink 2.4s 2s infinite;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0);
+      }
+    }
+
+    @keyframes blink {
+
+      45%,
+      55% {
+        box-shadow: 0 0 14px 3px rgba(226, 220, 234, .7);
+        transform: scale(1.25);
+      }
+    }
+
+    .h1 { top: 6px; left: 6px; }
+    .h2 { top: 6px; left: calc(50% - 6px); animation-delay: .2s, 2.1s; }
+    .h3 { top: 6px; right: 6px; animation-delay: .3s, 2.2s; }
+    .h4 { top: calc(50% - 6px); left: 6px; animation-delay: .4s, 2.3s; }
+    .h5 { top: calc(50% - 6px); right: 6px; animation-delay: .5s, 2.4s; }
+    .h6 { bottom: 6px; left: 6px; animation-delay: .6s, 2.5s; }
+    .h7 { bottom: 6px; left: calc(50% - 6px); animation-delay: .7s, 2.6s; }
+    .h8 { bottom: 6px; right: 6px; animation-delay: .8s, 2.7s; }
+
+    .tag {
+      position: absolute;
+      z-index: 5;
+      background: var(--lav2);
+      color: var(--dark);
+      font-weight: 700;
+      font-size: .85rem;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 30px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+      animation: tagin .5s 1.2s both, float 4s 2s ease-in-out infinite;
+    }
+
+    .t-role {
+      top: -18px;
+      left: -20px;
+    }
+
+    .t-exp {
+      top: 30%;
+      right: -34px;
+      animation-delay: 1.5s, 2.3s;
+    }
+
+    .arrow {
+      position: absolute;
+      z-index: 5;
+      width: 70px;
+      fill: none;
+      stroke: var(--lav2);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 120;
+      animation: ar 1s 1.7s both;
+    }
+
+    @keyframes ar {
+      from {
+        stroke-dashoffset: 120;
+      }
+    }
+
+    .a1 {
+      top: 14px;
+      left: 70px;
+    }
+
+    .a2 {
+      top: calc(30% + 30px);
+      right: -4px;
+      transform: scaleX(-1) rotate(20deg);
+    }
+
+    @keyframes tagin {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(.8);
+      }
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .stage {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #150a26;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 2%;
+      padding: 0 4% 0 3%;
+    }
+
+    .stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(155, 127, 179, .12)1px, transparent 1px) 0 0/28px 28px, linear-gradient(90deg, rgba(155, 127, 179, .12)1px, transparent 1px) 0 0/28px 28px;
+      animation: grid 8s linear infinite;
+    }
+
+    @keyframes grid {
+      to { background-position: 0 28px, 28px 0; }
+    }
+
+    .stage::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 18%;
+      left: -25%;
+      background: linear-gradient(90deg, transparent, rgba(226, 220, 234, .14), transparent);
+      animation: scan 5s 2.5s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+      to { left: 115%; }
+    }
+
+    .poly,
+    .penlayer {
+      position: absolute;
+      left: 4%;
+      top: 8%;
+      width: 50%;
+      overflow: visible;
+    }
+
+    .poly {
+      opacity: .9;
+    }
+
+    .penlayer {
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    #vLines { opacity: 0; transition: opacity .8s; }
+
+    #vAnchors rect {
+      fill: var(--lav2);
+      stroke: var(--takoi);
+      stroke-width: 1;
+      opacity: 0;
+      transition: opacity .25s, fill .15s;
+    }
+
+    #vAnchors rect.on { opacity: 1; }
+    #vAnchors rect.sel { fill: var(--takoi); stroke: var(--lav2); filter: drop-shadow(0 0 3px rgba(169, 140, 255, .9)); }
+
+    #vHandles { opacity: 0; transition: opacity .15s; }
+    #vHandles.on { opacity: 1; }
+
+    #vPen {
+      opacity: 0;
+      transition: opacity .4s;
+      filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55));
+    }
+
+    #vPen.on { opacity: 1; }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .photo {
+      position: relative;
+      z-index: 2;
+      width: 50%;
+      flex: 0 0 50%;
+      align-self: flex-end;
+      margin-left: -3%;
+      transform: translate(calc(var(--mx)*14px), calc(var(--my)*8px));
+      transition: transform .2s;
+      animation: wipe 1.2s .5s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .photo img {
+      width: 100%;
+      display: block;
+      filter: drop-shadow(0 0 22px rgba(160, 120, 255, .55));
+    }
+
+    @keyframes wipe {
+      from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+      }
+    }
+
+    .txt {
+      position: relative;
+      z-index: 3;
+      font-family: var(--cond);
+      line-height: .86;
+      color: var(--off);
+      transform: translate(calc(var(--mx)*-10px), calc(var(--my)*-6px));
+      transition: transform .2s;
+    }
+
+    .txt h1 {
+      font: inherit;
+    }
+
+    .ln {
+      display: block;
+      position: relative;
+      font-size: min(7.6cqw, 5.4rem);
+      white-space: nowrap;
+    }
+
+    .ln.sub {
+      font-family: var(--body);
+      font-weight: 700;
+      line-height: 1.1;
+      font-size: min(3.7cqw, 2.4rem);
+      margin-top: .55em;
+    }
+
+    /* Iconos Adobe */
+    .apps {
+      display: flex;
+      gap: min(1.6cqw, 14px);
+      margin-bottom: min(2cqw, 18px);
+    }
+
+    .app {
+      width: min(5.4cqw, 3.4rem);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 22%;
+      border: 1.5px solid currentColor;
+      font-family: var(--body);
+      font-weight: 700;
+      font-size: min(2.5cqw, 1.6rem);
+      line-height: 1;
+      letter-spacing: -.02em;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
+      animation: appin .5s calc(1.1s + var(--k) * .15s) cubic-bezier(.2, .9, .3, 1.4) both, float 4s calc(2s + var(--k) * .35s) ease-in-out infinite;
+      transition: box-shadow .25s;
+    }
+
+    .app:hover { box-shadow: 0 0 18px currentColor; }
+    .app.ai { background: #330000; color: #FF9A00; }
+    .app.ps { background: #001E36; color: #31A8FF; }
+    .app.ae { background: #00005B; color: #9999FF; }
+
+    @keyframes appin {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(.4) rotate(-12deg);
+      }
+    }
+
+    .ln .c {
+      display: inline-block;
+      animation: letter .6s calc(1s + var(--i)*.05s) cubic-bezier(.2, .9, .3, 1.4) both;
+    }
+
+    @keyframes letter {
+      from {
+        opacity: 0;
+        transform: translateY(60%) rotate(8deg) scale(.4);
+      }
+    }
+
+    .ln::before,
+    .ln::after {
+      content: attr(data-t);
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .ln::before {
+      color: var(--lav2);
+      animation: g1 5s 3s infinite;
+    }
+
+    .ln::after {
+      color: var(--mid);
+      animation: g2 5s 3s infinite;
+    }
+
+    .sub::after {
+      animation-name: g2;
+    }
+
+    @keyframes g1 {
+      0%, 90%, 100% { opacity: 0; }
+      92% { opacity: .85; transform: translate(-4px, 1px); clip-path: inset(10% 0 55% 0); }
+      95% { opacity: .85; transform: translate(3px, -1px); clip-path: inset(60% 0 8% 0); }
+    }
+
+    @keyframes g2 {
+      0%, 91%, 100% { opacity: 0; }
+      93% { opacity: .85; transform: translate(4px, -1px); clip-path: inset(50% 0 20% 0); }
+      96% { opacity: .85; transform: translate(-3px, 1px); clip-path: inset(5% 0 70% 0); }
+    }
+
+    .strike {
+      position: absolute;
+      left: -3%;
+      right: -3%;
+      top: 56%;
+      height: 4px;
+      background: var(--lav2);
+      box-shadow: 0 0 10px rgba(226, 220, 234, .6);
+      transform-origin: left;
+      animation: draw .7s 2.1s cubic-bezier(.7, 0, .2, 1) both, wob 5s 3s infinite;
+    }
+
+    @keyframes draw {
+      from { transform: scaleX(0); }
+    }
+
+    @keyframes wob {
+      92%, 100% { transform: none; }
+      94% { transform: translateY(-3px) skewX(-20deg); }
+    }
+
+    /* ===== ABOUT ===== */
+    #sobre-mi {
+      padding: 96px 0;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .avatar {
+      justify-self: center;
+      position: relative;
+      width: min(340px, 86vw);
+      aspect-ratio: 4/5;
+      margin: 14px;
+    }
+
+    .avatar img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 22px;
+      box-shadow: 0 25px 50px rgba(106, 68, 145, .25);
+    }
+
+    .who {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      background: rgba(40, 10, 30, .78);
+      color: #fff;
+      font-size: .8rem;
+      padding: 8px 16px;
+      border-radius: 30px;
+      backdrop-filter: blur(4px);
+    }
+
+    .who span {
+      opacity: .85;
+    }
+
+    .plate {
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      background: rgba(245, 240, 232, .95);
+      padding: 5px 14px;
+      text-align: center;
+      font-size: .62rem;
+      white-space: nowrap;
+    }
+
+    .plate b {
+      display: block;
+      font-size: .68rem;
+    }
+
+    .avatar .tag {
+      position: absolute;
+      z-index: 5;
+      background: var(--lav2);
+      color: var(--dark);
+      font-weight: 700;
+      font-size: .85rem;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 30px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+      animation: tagin .5s 1.2s both, float 4s 2s ease-in-out infinite;
+    }
+
+    .about .col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .eyebrow {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    h2.t {
+      font-family: var(--potta);
+      font-weight: 400;
+      color: var(--takoi);
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      line-height: 1.15;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chips span {
+      background: var(--lav);
+      color: var(--takoi);
+      font-size: .78rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 30px;
+    }
+
+    /* ===== PROJECTS ===== */
+    #proyectos {
+      background: var(--lav);
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    #proyectos .sub {
+      color: var(--gray);
+      margin: 8px 0 56px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      text-align: left;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, .65);
+      backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 8px 32px rgba(106, 68, 145, .08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(106, 68, 145, .16);
+    }
+
+    .card:last-child:nth-child(odd) {
+      grid-column: 1/-1;
+      max-width: 560px;
+      justify-self: center;
+      width: 100%;
+    }
+
+    .mock {
+      aspect-ratio: 16/10;
+      border-radius: 12px;
+      background: #fff radial-gradient(#e4dfe9 1.5px, transparent 1.5px) 0 0/16px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--gray);
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, .05);
+    }
+
+    .mock.has-img {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #fff;
+    }
+
+    .mock.has-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s;
+    }
+
+    .mock.has-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .mock .cnt {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(26, 15, 46, .85);
+      color: #fff;
+      font: 700 .7rem var(--body);
+      padding: 5px 12px;
+      border-radius: 30px;
+    }
+
+    .mock b {
+      font: 500 .78rem var(--body);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .mock small {
+      font-size: 10px;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      color: #000;
+    }
+
+    .card .m {
+      font-size: .75rem;
+      color: var(--gray);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .card p {
+      font-size: .82rem;
+      margin: 6px 0 20px;
+      color: rgba(0, 0, 0, .75);
+    }
+
+    /* ===== TIMELINE ===== */
+    #trayectoria {
+      background: #fff;
+      padding: 120px 0 140px;
+      overflow: hidden;
+    }
+
+    .th {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 40px;
+    }
+
+    .th h2 {
+      font-family: var(--potta);
+      font-weight: 400;
+      color: #1a1a1a;
+      line-height: 1;
+      font-size: clamp(3rem, 9.5vw, 8rem);
+    }
+
+    .th p {
+      max-width: 380px;
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .tf {
+      margin-top: 56px;
+      display: flex;
+      justify-content: space-between;
+      font-size: .7rem;
+      color: var(--gray);
+      letter-spacing: .2em;
+    }
+
+    .tl {
+      --z: 1;
+      position: relative;
+      padding: 64px 0 40px;
+    }
+
+    /* barra de zoom (flotante mientras se recorre la sección) */
+    .tl-bar {
+      position: sticky;
+      top: 96px;
+      z-index: 30;
+      height: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tl-zoom {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: -44px;
+      padding: 5px;
+      border-radius: 30px;
+      background: rgba(26, 15, 46, .94);
+      color: var(--off);
+      font: 600 .72rem var(--body);
+      box-shadow: 0 8px 24px rgba(26, 15, 46, .25);
+    }
+
+    .tl-zoom .zl {
+      padding: 0 6px 0 12px;
+      opacity: .7;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .62rem;
+    }
+
+    .tl-zoom button {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: 700 1rem var(--body);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: .2s;
+    }
+
+    .tl-zoom button:hover:not(:disabled) {
+      background: var(--takoi);
+    }
+
+    .tl-zoom button:disabled {
+      opacity: .3;
+      cursor: default;
+    }
+
+    .tl-zoom output {
+      min-width: 46px;
+      text-align: center;
+    }
+
+    /* línea de tinta */
+    .tl-ink {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ink-ribbon {
+      fill: #15101f;
+      transition: fill .5s ease;
+    }
+
+    .tl:hover .ink-ribbon,
+    .tl:focus-within .ink-ribbon {
+      fill: var(--takoi);
+    }
+
+    #nib {
+      filter: drop-shadow(0 3px 4px rgba(21, 16, 31, .3));
+      transition: opacity .3s;
+    }
+
+    #nib .nib-body {
+      fill: var(--takoi);
+    }
+
+    #nib .nib-tip {
+      fill: #15101f;
+      transition: fill .5s;
+    }
+
+    .tl:hover #nib .nib-tip {
+      fill: var(--mid);
+    }
+
+    .tl-list {
+      position: relative;
+      z-index: 2;
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr 120px 1fr;
+      align-items: center;
+      margin-bottom: calc(96px * var(--z));
+    }
+
+    .tl-item:last-child {
+      margin-bottom: 80px;
+    }
+
+    .tl-dot {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50% 46% 54% 48%;
+      background: #15101f;
+      box-shadow: 0 0 0 6px #fff;
+      transform: scale(0);
+      transition: transform .5s cubic-bezier(.2, 1.6, .4, 1), background .4s;
+    }
+
+    .tl-item.on .tl-dot {
+      transform: scale(1);
+    }
+
+    .tl:hover .tl-dot {
+      background: var(--takoi);
+    }
+
+    .tl-item.on:hover .tl-dot {
+      transform: scale(1.55);
+    }
+
+    .tl-card {
+      grid-row: 1;
+      width: 100%;
+      max-width: calc(440px * var(--z));
+      font-size: calc(.9rem * var(--z));
+      border-top: 2px solid #15101f;
+      padding-top: 16px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1), border-color .3s, box-shadow .3s;
+      outline: none;
+    }
+
+    .tl-item.l .tl-card {
+      grid-column: 1;
+      justify-self: end;
+      text-align: right;
+    }
+
+    .tl-item.r .tl-card {
+      grid-column: 3;
+      justify-self: start;
+      text-align: left;
+    }
+
+    .tl-item.on .tl-card {
+      opacity: 1;
+      transform: none;
+    }
+
+    .tl-item.on .tl-card:hover,
+    .tl-item.on .tl-card:focus-visible {
+      transform: translateY(-6px);
+      border-color: var(--takoi);
+    }
+
+    .tl-n {
+      display: block;
+      margin-bottom: 6px;
+      font: 700 .72em var(--body);
+      letter-spacing: .2em;
+      color: var(--takoi);
+    }
+
+    .tl-yr {
+      display: block;
+      font-family: var(--potta);
+      font-size: 4.6em;
+      line-height: .95;
+      color: #15101f;
+      transition: color .3s;
+    }
+
+    .tl-yr.long {
+      font-size: 2.8em;
+      line-height: 1.1;
+    }
+
+    .tl-card:hover .tl-yr {
+      color: var(--takoi);
+    }
+
+    .tl-card h3 {
+      margin-top: 12px;
+      font-size: 1.45em;
+      font-weight: 800;
+      letter-spacing: .01em;
+      line-height: 1.1;
+      color: #000;
+    }
+
+    .tl-loc {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 12px;
+      border-radius: 30px;
+      background: var(--lav);
+      color: var(--takoi);
+      font-size: .72em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .tl-role {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .tl-card p {
+      margin-top: 8px;
+      font-size: .92em;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    .tl-card em {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      background: var(--lav2);
+      color: var(--dark);
+      font-style: normal;
+      font-size: .68em;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* tarjeta destacada (empleo actual) */
+    .tl-item.hl .tl-card {
+      background: var(--takoi);
+      color: var(--off);
+      border-top: 0;
+      border-radius: 20px;
+      padding: 28px 30px 26px;
+      box-shadow: 0 20px 50px rgba(106, 68, 145, .35);
+    }
+
+    .tl-item.hl .tl-card .tl-n,
+    .tl-item.hl .tl-card .tl-yr,
+    .tl-item.hl .tl-card h3,
+    .tl-item.hl .tl-card .tl-role,
+    .tl-item.hl .tl-card p {
+      color: var(--off);
+    }
+
+    .tl-item.hl .tl-card .tl-loc {
+      background: rgba(255, 255, 255, .16);
+      color: var(--off);
+    }
+
+    @media(max-width:860px) {
+      .tl {
+        padding-top: 72px;
+      }
+
+      .tl-item {
+        grid-template-columns: 44px 1fr;
+      }
+
+      .tl-dot {
+        grid-column: 1;
+      }
+
+      .tl-item.l .tl-card,
+      .tl-item.r .tl-card {
+        grid-column: 2;
+        justify-self: start;
+        text-align: left;
+        max-width: none;
+      }
+
+      .tl-zoom .zl {
+        display: none;
+      }
+
+      .tl-yr {
+        font-size: 3.6em;
+      }
+    }
+
+    /* ===== LOGOFOLIO ===== */
+    #logofolio {
+      padding: 96px 0;
+      text-align: center;
+      background: #fff;
+    }
+
+    #logofolio p {
+      color: var(--gray);
+      margin: 8px 0 40px;
+    }
+
+    .logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .logos a {
+      background: #fff;
+      border: 2px solid var(--takoi);
+      border-radius: 20px;
+      padding: .6rem 1.5rem;
+      font-weight: 700;
+      color: var(--takoi);
+      transition: .25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+    }
+
+    .logos a:hover {
+      background: var(--takoi);
+      color: var(--off);
+      transform: translateY(-3px);
+    }
+
+    /* ===== CONTACT ===== */
+    #contacto {
+      background: #fff;
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    #contacto>.wrap>p {
+      color: var(--gray);
+      margin: 8px 0 36px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      display: grid;
+      gap: 16px;
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cfc6dc;
+      border-radius: 12px;
+      font: inherit;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--takoi);
+      border-color: transparent;
+    }
+
+    form button {
+      background: var(--takoi);
+      color: var(--off);
+      border: 0;
+      border-radius: 30px;
+      width: 220px;
+      height: 46px;
+      padding: 0;
+      justify-self: center;
+      cursor: pointer;
+      transition: .25s;
+      text-transform: lowercase;
+      font-weight: 600;
+    }
+
+    form button:hover {
+      background: var(--dark);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      color: var(--off);
+      text-align: center;
+      padding: 36px 16px;
+      font-size: .85rem;
+    }
+
+    footer .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px 28px;
+    }
+
+    footer .footer-contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer .footer-contact img {
+      width: auto;
+      height: 20px;
+      display: block;
+    }
+
+    footer a:hover {
+      color: var(--lav2);
+    }
+
+    footer p {
+      color: rgba(245, 240, 232, .5);
+      font-size: .7rem;
+      margin-top: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1100px) {
+      nav ul { gap: 18px; }
+      nav a { font-size: .78rem; }
+      .brand small { display: none; }
+    }
+
+    @media(max-width:860px) {
+      #burger { display: block; }
+      .nav { padding: 0 12px 0 20px; }
+      nav {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        border-radius: 22px;
+        border: 1px solid rgba(232, 227, 238, .22);
+        background: rgba(26, 15, 46, .88);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+        display: none;
+      }
+      nav.open { display: block; }
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 28px 20px;
+      }
+      nav a { display: block; padding: 12px 0; }
+      .about, .grid { grid-template-columns: 1fr; }
+      .about { gap: 40px; }
+      .t-exp { right: -6px; }
+    }
+
+    @media(max-width:560px) {
+      .two, .logos { grid-template-columns: 1fr; }
+      .logos { grid-template-columns: 1fr 1fr; }
+      .tf { flex-direction: column; gap: 6px; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *, ::before, ::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ===== WHATSAPP FLOTANTE ===== */
+    .wa-float {
+      position: fixed;
+      right: 18px;
+      bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+      width: 64px;
+      height: 64px;
+      z-index: 900;
+      display: block;
+      filter: drop-shadow(0 6px 10px rgba(26, 15, 46, .28));
+      transition: transform .2s;
+    }
+
+    .wa-float:hover { transform: rotate(-6deg) scale(1.08); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .wa-float { animation: wa-wiggle 6s ease-in-out infinite; }
+      @keyframes wa-wiggle {
+        0%, 90%, 100% { transform: rotate(0); }
+        93% { transform: rotate(-8deg); }
+        96% { transform: rotate(7deg); }
+      }
+    }
+
+    @media(max-width:600px) {
+      .wa-float { width: 56px; height: 56px; right: 14px; }
+    }
+
+    /* ===== LIGHTBOX ===== */
+    #lb {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(15, 8, 28, .94);
+      display: grid;
+      grid-template-columns: 64px 1fr 64px;
+      grid-template-rows: 1fr auto;
+      align-items: center;
+      padding: 16px;
+      gap: 8px;
+    }
+
+    #lb[hidden] { display: none; }
+
+    #lb figure {
+      margin: 0;
+      min-height: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #lb-stage {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: zoom-in;
+      touch-action: none;
+      user-select: none;
+    }
+
+    #lb-stage.zoomed { cursor: grab; }
+    #lb-stage.drag { cursor: grabbing; }
+
+    #lb figure img {
+      max-width: 100%;
+      max-height: calc(100vh - 240px);
+      object-fit: contain;
+      border-radius: 8px;
+      transform-origin: center;
+      transition: transform .15s ease-out;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+
+    #lb-stage.drag img { transition: none; }
+
+    #lb .zt {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #e2dcea;
+      font-size: .8rem;
+    }
+
+    #lb .zt button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.3rem;
+    }
+
+    #lb .zt span {
+      min-width: 44px;
+      text-align: center;
+    }
+
+    .proj-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: #6B4491;
+      font-weight: 600;
+      font-size: .85rem;
+      text-decoration: none;
+    }
+
+    .proj-link:hover { text-decoration: underline; }
+
+    #lb .lb-link {
+      background: #fff;
+      color: #1a0f2e;
+      font-weight: 600;
+      font-size: .85rem;
+      padding: 8px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    #lb .lb-link[hidden] { display: none; }
+    #lb .lb-link:hover { background: #e9dff3; }
+
+    .bb {
+      margin-top: 14px;
+      font-size: .85rem;
+    }
+
+    .bb summary {
+      display: inline-block;
+      cursor: pointer;
+      list-style: none;
+      background: #6B4491;
+      color: #fff;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 30px;
+    }
+
+    .bb summary::-webkit-details-marker { display: none; }
+    .bb summary:hover { background: #1a0f2e; }
+
+    .bb ul {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .bb a {
+      color: #6B4491;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .bb a:hover { text-decoration: underline; }
+
+    #lb figcaption {
+      color: #e2dcea;
+      font-size: .85rem;
+    }
+
+    #lb button {
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      border: 0;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    #lb button:hover {
+      background: rgba(255, 255, 255, .28);
+    }
+
+    #lb .x {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 2;
+    }
+
+    #lb .th {
+      grid-column: 1/-1;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      overflow-x: auto;
+      padding: 4px;
+    }
+
+    #lb .th button {
+      width: 64px;
+      height: 48px;
+      border-radius: 6px;
+      padding: 0;
+      overflow: hidden;
+      opacity: .55;
+      outline: 2px solid transparent;
+    }
+
+    #lb .th button.on {
+      opacity: 1;
+      outline-color: #9B7FB3;
+    }
+
+    #lb .th img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media(max-width:600px) {
+      #lb {
+        grid-template-columns: 40px 1fr 40px;
+        padding: 8px;
+      }
+      #lb .pv, #lb .nx {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    /* ===== LOGO CAROUSEL (Logofolio) ===== */
+    .folder-tabs {
+      border: none;
+      justify-content: center;
+      gap: .6rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .folder-tabs .nav-link {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: .85rem;
+      color: #6B4491;
+      background: #f2edf7;
+      border: 1px solid #e1dcea;
+      border-radius: 20px;
+      padding: .55rem 1.3rem;
+      transition: all .2s ease;
+      cursor: pointer;
+      text-transform: none;
+      letter-spacing: normal;
+      height: auto;
+      width: auto;
+      white-space: normal;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .folder-tabs .nav-link .count {
+      display: inline-block;
+      background: rgba(255, 255, 255, .6);
+      color: #6B4491;
+      border-radius: 20px;
+      font-size: .7rem;
+      padding: .05rem .5rem;
+      margin-left: .4rem;
+    }
+
+    .folder-tabs .nav-link:hover {
+      background: #e1dcea;
+      color: #6B4491;
+    }
+
+    .folder-tabs .nav-link.active {
+      background: #6B4491;
+      color: #fff;
+      border-color: #6B4491;
+    }
+
+    .folder-tabs .nav-link.active .count {
+      background: rgba(255, 255, 255, .25);
+      color: #fff;
+    }
+
+    .folder-heading {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .folder-heading h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #6B4491;
+      font-size: 1.15rem;
+      margin-bottom: .2rem;
+    }
+
+    .folder-heading p {
+      font-size: .82rem;
+      color: #888;
+      margin-bottom: 0;
+    }
+
+    .logo-carousel {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .carousel-stage {
+      position: relative;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(107, 68, 145, .12);
+      height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .carousel-stage img {
+      max-width: 82%;
+      max-height: 78%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: opacity .25s ease;
+    }
+
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: #6B4491;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+      transition: background .2s ease, transform .2s ease;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .carousel-nav-btn:hover {
+      background: #6B4491;
+      color: #fff;
+    }
+
+    .carousel-nav-btn.prev { left: 16px; }
+    .carousel-nav-btn.next { right: 16px; }
+
+    .carousel-counter {
+      position: absolute;
+      bottom: 14px;
+      right: 18px;
+      background: rgba(255, 255, 255, .85);
+      color: #6B4491;
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .25rem .7rem;
+      border-radius: 20px;
+    }
+
+    .thumb-strip {
+      display: flex;
+      gap: .6rem;
+      overflow-x: auto;
+      padding: 1.1rem .3rem .4rem;
+      scroll-behavior: smooth;
+    }
+
+    .thumb-strip::-webkit-scrollbar { height: 5px; }
+    .thumb-strip::-webkit-scrollbar-thumb { background: #e1dcea; border-radius: 10px; }
+
+    .thumb-item {
+      flex: 0 0 auto;
+      width: 66px;
+      height: 66px;
+      border-radius: 10px;
+      background: #f7f4fb;
+      border: 2px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color .2s ease, opacity .2s ease;
+      opacity: .6;
+    }
+
+    .thumb-item img {
+      max-width: 78%;
+      max-height: 78%;
+      object-fit: contain;
+    }
+
+    .thumb-item:hover { opacity: .9; }
+    .thumb-item.active {
+      border-color: #6B4491;
+      opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+      .carousel-stage { height: 300px; }
+      .carousel-nav-btn { width: 38px; height: 38px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#inicio">
+        <b>ARMANDO CASTAÑO</b>
+        <small data-en="Creative Director & Art Director">Director Creativo y Director de Arte</small>
+      </a>
+      <div class="right">
+        <nav id="menu">
+          <ul>
+            <li><a href="#inicio" data-en="Home">Inicio</a></li>
+            <li><a href="#sobre-mi" data-en="About me">Sobre mí</a></li>
+            <li><a href="#proyectos" data-en="Projects">Proyectos</a></li>
+            <li><a href="#trayectoria" data-en="Career">Trayectoria</a></li>
+            <li><a href="#logofolio" data-en="Logofolio">Logofolio</a></li>
+            <li><a href="#contacto" data-en="Contact">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="lang-wrap" id="langWrap">
+          <button id="lang" type="button" aria-label="Cambiar idioma / Switch language" aria-haspopup="true" aria-expanded="false">
+            <span id="lang-cur">ES</span><i class="bi bi-chevron-down chev"></i>
+          </button>
+          <div class="lang-menu" role="menu">
+            <button type="button" class="on" id="l-es" data-lang="es" role="menuitem">Español</button>
+            <button type="button" id="l-en" data-lang="en" role="menuitem">English</button>
+          </div>
+        </div>
+        <button id="burger" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio">
+      <div class="mega" aria-hidden="true">PORTAFOLIO</div>
+      <div class="halo"></div>
+      <div class="banner" id="banner">
+        <div class="frame"></div>
+        <i class="h h1"></i><i class="h h2"></i><i class="h h3"></i><i class="h h4"></i>
+        <i class="h h5"></i><i class="h h6"></i><i class="h h7"></i><i class="h h8"></i>
+        <span class="tag t-role" data-en="Art Director">Director de Arte</span>
+        <svg class="arrow a1" viewBox="0 0 70 60" aria-hidden="true">
+          <path d="M2 6C34 2 58 20 64 50M64 50l-9-9M64 50l8-10" />
+        </svg>
+        <span class="tag t-exp" data-en="10+ Years">10+ Años</span>
+        <svg class="arrow a2" viewBox="0 0 70 60" aria-hidden="true">
+          <path d="M2 6C34 2 58 20 64 50M64 50l-9-9M64 50l8-10" />
+        </svg>
+        <div class="stage">
+          <svg class="poly" viewBox="0 0 200 200" fill="none" stroke="#a98cff" stroke-width=".8" stroke-linejoin="round" aria-hidden="true">
+            <polyline id="vOuter" points="" />
+            <polyline id="vInner" points="" />
+            <path id="vLines" d="" />
+          </svg>
+          <svg class="penlayer" viewBox="0 0 200 200" aria-hidden="true">
+            <g id="vHandles" stroke="#E2DCEA" stroke-width=".8">
+              <line id="vH1" /><line id="vH2" />
+              <circle id="vC1" r="1.8" fill="#E2DCEA" /><circle id="vC2" r="1.8" fill="#E2DCEA" />
+            </g>
+            <g id="vAnchors"></g>
+            <g id="vPen" transform="translate(100 10)">
+              <g transform="rotate(28) scale(.85)">
+                <path d="M0 0L-6 -13Q-6.5 -19 -4 -22L4 -22Q6.5 -19 6 -13Z" fill="#F5F0E8" stroke="#1a0f2e" stroke-width="1.1" stroke-linejoin="round" />
+                <path d="M0 -3L0 -13" stroke="#1a0f2e" stroke-width="1" />
+                <circle cx="0" cy="-14.5" r="1.7" fill="#1a0f2e" />
+                <rect x="-4.6" y="-28" width="9.2" height="6" rx="1.4" fill="#1a0f2e" stroke="#F5F0E8" stroke-width="1" />
+              </g>
+            </g>
+          </svg>
+          <div class="photo">
+            <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/main/Jorge-Jotako-sin-fondo.png" alt="Armando Castaño">
+          </div>
+          <div class="txt">
+            <div class="apps" aria-label="Adobe Illustrator, Photoshop, After Effects">
+              <span class="app ai" style="--k:0" title="Illustrator">Ai</span>
+              <span class="app ps" style="--k:1" title="Photoshop">Ps</span>
+              <span class="app ae" style="--k:2" title="After Effects">Ae</span>
+            </div>
+            <h1 id="kin" aria-label="Armando Castaño, Director Creativo">
+              <span class="ln" data-t="ARMANDO">ARMANDO</span>
+              <span class="ln" data-t="CASTAÑO">CASTAÑO</span>
+              <span class="ln sub" id="role" data-t="DIRECTOR CREATIVO" data-en="CREATIVE DIRECTOR">DIRECTOR CREATIVO</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <a class="pill cta" href="#proyectos" data-en="View projects">Ver proyectos</a>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <div class="wrap about">
+        <div class="avatar">
+          <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/338645f70219daeb0424da5f0ba17741557be422/jorge%20%20imagen.webp" alt="Armando Castaño">
+          <span class="who"><b>Armando</b><span data-en="– Creative Director">– Director Creativo</span></span>
+        </div>
+        <div class="col">
+          <span class="eyebrow" data-en="CREATIVE DIRECTOR & ART DIRECTOR">DIRECTOR CREATIVO Y DIRECTOR DE ARTE</span>
+          <h2 class="t" data-en="Creative Director & Visual Designer">Director Creativo y Diseñador Visual</h2>
+          <p data-en="Over 10 years of experience creating comprehensive visual solutions. My background in Digital Animation allows me to merge branding, editorial design, motion graphics, and illustration to elevate brand identity.">Más de 10 años de experiencia creando soluciones visuales integrales. Mi formación en Animación Digital me permite combinar branding, diseño editorial, motion graphics e ilustración para fortalecer la identidad de las marcas.</p>
+          <div class="chips">
+            <span data-en="Branding">Marca y branding</span>
+            <span data-en="Visual Identity">Identidad Visual</span>
+            <span data-en="Editorial Design">Diseño Editorial</span>
+            <span data-en="Motion Graphics">Gráficos en movimiento</span>
+            <span data-en="Digital Illustration">Ilustración Digital</span>
+            <span data-en="Web Design">Diseño Web</span>
+            <span data-en="Corporate Comms">Comunicación Corporativa</span>
+            <span data-en="Creative Direction">Dirección Creativa</span>
+          </div>
+          <a class="pill outline" href="mailto:armando.takoi.artist@gmail.com?subject=Solicitud%20de%20CV%20-%20Armando%20Casta%C3%B1o">
+            <span data-en="Download CV">Descargar CV</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <div class="wrap">
+        <a class="pill sel" href="#proyectos" data-en="Selected work">Trabajos seleccionados</a>
+        <h2 class="t" style="margin-top:20px" data-en="Featured Projects">Proyectos Destacados</h2>
+        <p class="sub" data-en="The best of my recent work">Lo mejor de mi trabajo reciente</p>
+        <div class="grid" id="projects"></div>
+        <a class="pill more" href="https://www.behance.net/jotako" target="_blank" rel="noopener" data-en="View all projects">Ver todos los proyectos</a>
+      </div>
+    </section>
+
+    <!-- TRAYECTORIA -->
+    <section id="trayectoria">
+      <div class="wrap">
+        <div class="th">
+          <div>
+            <span class="eyebrow" data-en="ARMANDO CASTAÑO · PROFESSIONAL CAREER">ARMANDO CASTAÑO · RECORRIDO PROFESIONAL</span>
+            <h2 data-en="CAREER PATH">TRAYECTORIA</h2>
+          </div>
+          <p data-en="YEARS SPENT BUILDING, REFINING, AND MOVING FORWARD — EACH STEP ADDS DEPTH TO HOW I THINK, DESIGN, AND DIRECT BRANDS.">AÑOS CONSTRUYENDO, REFINANDO Y AVANZANDO — CADA PASO AÑADE PROFUNDIDAD A LA MANERA EN QUE PIENSO, DISEÑO Y DIRIJO MARCAS.</p>
+        </div>
+        <div class="tl" id="timeline"></div>
+        <div class="tf">
+          <span data-en="ARMANDO CASTAÑO · PORTFOLIO">ARMANDO CASTAÑO · PORTAFOLIO</span><span>2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOFOLIO -->
+    <section id="logofolio">
+      <div class="wrap">
+        <h2 class="t">Logofolio</h2>
+        <p data-en="A selection of logos created for various brands">Una selección de logotipos creados para diversas marcas</p>
+        <div id="logofolio-container">
+          <ul class="folder-tabs" id="folderTabs" role="tablist"></ul>
+          <div class="tab-content" id="folderTabsContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="wrap">
+        <h2 class="t" data-en="Let's work together?">¿Trabajamos juntos?</h2>
+        <p data-en="I'm available for freelance projects and full-time opportunities.">Estoy disponible para proyectos freelance y oportunidades a tiempo completo.</p>
+        <form id="form">
+          <div class="two">
+            <div><label data-en="Name *">Nombre *</label><input name="n" required placeholder="Tu nombre" data-en-ph="Your name"></div>
+            <div><label data-en="Company">Empresa</label><input name="c" placeholder="Nombre de empresa" data-en-ph="Company name"></div>
+          </div>
+          <div class="two">
+            <div><label data-en="Phone">Teléfono</label><input name="t" type="tel" placeholder="+57 ..."></div>
+            <div><label data-en="Email *">Correo electrónico *</label><input name="e" type="email" required placeholder="correo@ejemplo.com" data-en-ph="you@example.com"></div>
+          </div>
+          <div><label data-en="Reason for contact">Motivo de contacto</label>
+            <select name="r">
+              <option value="Freelance" data-en="Freelance">Freelance</option>
+              <option value="Contrato laboral" data-en="Employment contract">Contrato laboral</option>
+              <option value="Prestación de servicios" data-en="Service agreement">Prestación de servicios</option>
+              <option value="Otro" data-en="Other">Otro</option>
+            </select>
+          </div>
+          <div><label data-en="I want to work with your company *">Quiero trabajar con su empresa *</label><textarea name="m" rows="4" required placeholder="Cuéntanos qué necesitas y cómo podemos colaborar..." data-en-ph="Tell us what you need and how we can collaborate..."></textarea></div>
+          <button type="submit" data-en="Send message">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contact">
+      <a href="https://wa.me/573145641237" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/whatsapp%20(2).png" alt="WhatsApp" height="20"> +57 314 564 1237
+      </a>
+      <a href="mailto:armando.takoiartist@gmail.com">
+        <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/correo.png" alt="Correo" height="20"> armando.takoiartist@gmail.com
+      </a>
+      <a href="https://instagram.com/Takoiartist" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/Recurso%20131.png" alt="Instagram" height="20"> @Takoiartist
+      </a>
+      <a href="https://www.behance.net/jotako" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/behance.png" alt="Behance" height="20"> @jotako
+      </a>
+    </div>
+    <p data-en="© 2026 Armando Castaño · All rights reserved">© 2026 Armando Castaño · Todos los derechos reservados</p>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a id="wa-float" class="wa-float" href="https://wa.me/573145641237" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true">
+      <!-- sombra dibujada -->
+      <path d="M35 9 C49 8 61 19 61 34 C61 49 49 61 34 61 C29 61 25 60 21 58 L10 61 L14 51 C11 47 9 41 9 35 C9 20 21 10 35 9 Z" fill="#1a0f2e"/>
+      <!-- globo morado con contorno de tinta -->
+      <path d="M32 6 C46 5 58 16 58 31 C58 46 46 58 31 58 C26 58 22 57 18 55 L7 58 L11 48 C8 44 6 38 6 32 C6 17 18 7 32 6 Z" fill="#6B4491" stroke="#1a0f2e" stroke-width="2.6" stroke-linejoin="round"/>
+      <!-- trazos de brillo -->
+      <path d="M14 20 C16 15 20 12 25 10" fill="none" stroke="#b79bd6" stroke-width="2" stroke-linecap="round"/>
+      <path d="M50 42 C48 47 44 50 40 52" fill="none" stroke="#4a2d69" stroke-width="2" stroke-linecap="round"/>
+      <!-- teléfono dibujado -->
+      <path d="M22.5 19.5 C20.5 21.5 20.5 25.5 24.5 32.5 C28.5 39.5 34.5 44.5 40 43.5 C43.5 42.8 44.5 39.8 43.2 38.4 L39.2 35.2 C38 34.2 36.2 35 35.2 36.2 C32.2 35 28.2 31 27.2 28 C28.4 27 29.2 25.2 28.2 24 L25.2 19.8 C24.4 18.8 23.4 18.8 22.5 19.5 Z" fill="#fff" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div id="lb" hidden>
+    <button class="x" aria-label="Cerrar">✕</button>
+    <div class="zt" aria-label="Zoom">
+      <button class="zo" aria-label="Alejar" title="Alejar (-)">−</button>
+      <span id="lb-level">100%</span>
+      <button class="zi" aria-label="Acercar" title="Acercar (+)">+</button>
+      <button class="zr" aria-label="Restablecer zoom" title="Restablecer (0)"><i class="bi bi-arrows-angle-contract"></i></button>
+    </div>
+    <button class="pv" aria-label="Anterior">‹</button>
+    <figure>
+      <div id="lb-stage"><img id="lb-img" alt="" draggable="false"></div>
+      <figcaption id="lb-cap"></figcaption>
+      <a id="lb-link" class="lb-link" href="#" target="_blank" rel="noopener" hidden></a>
+    </figure>
+    <button class="nx" aria-label="Siguiente">›</button>
+    <div class="th" id="lb-thumbs"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ===== Datos ===== */
+    const GH = "https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/";
+    const gh = (commit, files) => files.map(f => GH + commit + "/" + f);
+
+    // [nombre, subtítulo ES, subtítulo EN, etiqueta ES, etiqueta EN, descripción ES, descripción EN]
+    const PROJECTS = [
+      ["Servimeters", "Diseño UI, landing pages y multimedia", "UI Design, Landing Pages & Multimedia", "Diseño UI · 2024", "UI Design · 2024", "Diseño UI y landing pages, edición de reels y multimedia para redes sociales, cursos y webinars, además de folletos, flyers y stand para ferias.", "UI design and landing pages, reel editing and multimedia for social media, courses and webinars, plus brochures, flyers and trade-show stand."],
+      ["Hierros y Cementos Social Media", "Carruseles para redes sociales", "Social Media Carousels", "Social Media", "Social Media", "Diseño de carruseles y contenido para las redes sociales de Hierros y Cementos.", "Carousel and content design for the Hierros y Cementos social media channels."],
+      ["Branding de marcas", "Identidad visual para varias marcas", "Visual identity for multiple brands", "Branding", "Branding", "Selección de proyectos de branding: logotipos, aplicaciones y piezas gráficas para distintas marcas.", "A selection of branding projects: logos, applications and graphic pieces for different brands."],
+      ["CCR", "Manual de marca y sistema visual", "Brand Guidelines & Visual System", "Rebranding · 2022", "Rebranding · 2022", "Rebranding completo, manual de marca y aplicación de la identidad visual.", "Complete rebranding, brand manual and visual identity application."],
+      ["Hangar", "Branding y piezas publicitarias", "Branding & Advertising Pieces", "Branding", "Branding", "Identidad de marca, publicidad y volantes para Hangar Emprendedor.", "Brand identity, advertising and flyers for Hangar Emprendedor."],
+      ["Life Panama", "Diseño editorial y branding", "Editorial Design & Branding", "Diseño Editorial", "Editorial Design", "Maquetación de la revista inmobiliaria, portadas, newsletters y piezas de lanzamiento.", "Real-estate magazine layout, covers, newsletters and launch pieces."],
+      ["Lola's Day Care Panama", "Branding · Diseño UI/UX", "Branding · UI/UX Design", "Branding · UI/UX", "Branding · UI/UX", "Identidad de marca y diseño UI/UX de la app web responsive: ingreso, registro y flujos de usuario.", "Brand identity and UI/UX design for the responsive web app: login, sign-up and user flows."],
+      ["Celebrando Diversidades", "Diseño editorial y maquetación de libro", "Editorial Design & Book Layout", "Diseño Editorial · 2024", "Editorial Design · 2024", "Proyecto editorial completo: branding, ilustraciones, maquetación e idea creativa.", "Complete editorial project: branding, illustrations, layout and creative concept."],
+      ["Packaging", "Empaques, etiquetas y piezas gráficas", "Packaging, Labels & Graphic Pieces", "Diseño de Packaging", "Packaging Design", "Empaques, etiquetas, newsletters y publicaciones para Colombian Coffee.", "Packaging, labels, newsletters and social posts for Colombian Coffee."],
+      ["Rebranding Colombian Coffee", "Sello e identidad de marca", "Brand Seal & Identity", "Rebranding", "Rebranding", "Rediseño de la marca Colombian Coffee: sello, identidad visual y aplicaciones.", "Colombian Coffee brand redesign: seal, visual identity and applications."]
+    ];
+
+    /* ===== Enlaces a Behance (opcional por proyecto) ===== */
+    const PROJECT_LINKS = {
+      "Celebrando Diversidades": "https://www.behance.net/gallery/191228133/Celebrando-Diversidades-Cerebrales",
+      "CCR": "https://www.behance.net/gallery/163585267/CCR-effect-Brand-Book-Presentation",
+      "Rebranding Colombian Coffee": "https://takoiartist.github.io/takoi-pdf/COLOMBIAN%20COFFEE%20LOGO.pdf",
+      "Hangar": "https://www.behance.net/gallery/133050217/Hangar-Emprendedor",
+      "Life Panama": "https://www.behance.net/gallery/82111929/Life-Panama-Revista-Inmobiliaria",
+      "Lola's Day Care Panama": "https://www.behance.net/gallery/192503369/Web-Responsive-UX-UI-Design"
+    };
+
+    /* ===== Branding de marcas: [commit, archivo, nombre, enlace opcional] ===== */
+    const BE = "https://www.behance.net/gallery/";
+    const BRANDS = [
+      ["3c771274f667b13dc3707ec67f2a6a074226cd12", "2026-10-16%2013_21_56-%232-convertido-de-png.webp", "Moto Moto Refacciones", BE + "183817935/Moto-Moto-Refacciones-Manzanilo-Brand"],
+      ["c46aff8d83f903702169e4839f47f78d3f0b056b", "2026-10-16%2013_22_37-%232-convertido-de-png.webp", "BAR · Better Auto Rentals", BE + "193735735/BAR-Better-Auto-Rentals-Brand"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "2026-10-16%2013_23_19-%232-convertido-de-png.webp", "Clip", BE + "137837547/Clip-Brand"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "2026-10-16%2013_23_45-%232-convertido-de-png.webp", "Comic Wings", BE + "103560845/Logo-Comic-Wings"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "2026-10-16%2013_24_35-%232-convertido-de-png.webp", "González Motor Sport", BE + "163702613/Gonzalez-Motor-Sport-Brand-Book"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "Viernes%20de%20Delicias_v3.0-06-convertido-de-jpg.webp", "Delicias Santeñas"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "Viernes%20de%20Delicias_v3.0-08-convertido-de-jpg.webp", "Delicias Santeñas"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "Viernes%20de%20Delicias_v3.0-09-convertido-de-jpg.webp", "Delicias Santeñas"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "%5BJotako%5D%20Negos%20Geometricos-17.webp", "Neuro Children", BE + "103599659/Neuro-Children-Branding"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "amalia.webp", "Amalia"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "asmr.webp", "Valyum ASMR", BE + "112453053/Valyum-ASMR-Branding"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "feme%20basics.webp", "Feme Basics"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "los%20viajes%20de%20danis.webp", "Fantasía de Viaje", BE + "94711845/Fantasia-de-Viaje-Branding"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "mis%20empanada.webp", "Mis Empanadas"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "sasha.webp", "Sasha Boutique Col"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "toro%20autos.webp", "Toro Auto Sales · Branding + UI", BE + "183818661/Toro-Auto-Sales"],
+      ["4075cde21b5f6fb69fb19cca38da5f30024c84a7", "Ingrid%20Rivas%20BrandBook%202025.webp", "Ingrid Rivas · Brandbook 2025", "https://drive.google.com/file/d/1Y6qfeL6nxDHFhXQI2pM8EqG6Q1Wh__oL/view?usp=drive_link"]
+    ];
+
+    // Nombre y enlace por imagen (se muestran en el visor al ampliar)
+    const IMAGE_INFO = {};
+    BRANDS.forEach(b => { IMAGE_INFO[GH + b[0] + "/" + b[1]] = { cap: b[2], link: b[3] || "" }; });
+
+    /* ===== Brandbooks de muestra (botón en la tarjeta) ===== */
+    const BRANDBOOKS = {
+      "Branding de marcas": [
+        { name: "Ingrid Rivas · Brandbook 2025", url: "https://drive.google.com/file/d/1Y6qfeL6nxDHFhXQI2pM8EqG6Q1Wh__oL/view?usp=drive_link" },
+        { name: "Pardo Bohórquez Abogados · MDM 2020", url: "https://drive.google.com/file/d/1quO2P6u-brDc8Hl9SZAmL9QE09AnA2xw/view?usp=drive_link" },
+        { name: "Life by Paula Valencia · Manual de Marca 2020 (Lite)", url: "https://drive.google.com/file/d/1cP7zk6r3zVPUnX0VPn78N_TY6pLTqZIE/view?usp=drive_link" },
+        { name: "DALI · MDM 12.06.2020", url: "https://drive.google.com/file/d/1OOGVq6_0GJ4ELlOclLzWMMkf9rNDuZi4/view?usp=drive_link" },
+        { name: "Retiro Primavera · Manual de Marca", url: "https://drive.google.com/file/d/1LJDOotHQeivqQmSvIN3fACTDbORROjj8/view?usp=drive_link" },
+        { name: "Brandbook de muestra", url: "https://drive.google.com/file/d/1jLW3wRGWog51kIdBJIfxqaA4oy8xWLM4/view?usp=drive_link" }
+      ]
+    };
+
+    /* ===== Botones desplegables por proyecto (landing pages, brandbooks) ===== */
+    const SM = "https://www.servimeters.com/";
+    const PROJECT_LISTS = {
+      "Servimeters": {
+        icon: "bi-window", es: "Ver landing pages", en: "View landing pages",
+        items: [
+          { name: "Curso de diseño y construcción TDT · RITEL", url: SM + "curso-de-dise%C3%B1o-y-construcci%C3%B3n-tdt-ritel" },
+          { name: "Compliance y auditor interno · ISO 9001 · 37001 · 37301", url: SM + "compliance-y-auditor-interno-iso9001-iso37001-iso37301" },
+          { name: "Certificación de sistemas de gestión ISO", url: SM + "certificacion-sistemas-de-gestion-iso" },
+          { name: "Inspección RETIE y RETILAP 2024", url: SM + "inspeccion-retie-y-retilap-2024" }
+        ]
+      },
+      "Branding de marcas": { icon: "bi-book", es: "Brandbooks", en: "Brandbooks", items: BRANDBOOKS["Branding de marcas"] }
+    };
+
+    /* ===== Imágenes de Proyectos (la primera es la portada) ===== */
+    const PROJECT_IMAGES = {
+      "Servimeters": [
+        ...gh("a95e9fbda2a50f088b079c5eb0dcca47a7940d1c", [
+          "Mockup-corporativo-del-portafolio-Servimeters.webp",
+          "Manual-de-marca-SERVIMETERS-en-azul.webp",
+          "Mockup-corporativo-azul-con-portafolio-abierto.webp",
+          "Mockup-corporativo-en-laptop-con-luz-geom%C3%A9trica.webp",
+          "Papeler%C3%ADa-corporativa-azul-de-Servimeters.webp",
+          "Presentaci%C3%B3n-de-Instagram-sobre-ascensores.webp",
+          "Sello-de-marca-Servimeters-en-papel-blanco%20(1).webp"
+        ]),
+        ...gh("bb23e63de0e1dfa00091418ca09284edfcc01599", [
+          "Collage%20de%20publicaciones%20de%20Instagram%20sobre%20RETIE.webp",
+          "Mockup%20Instagram%20de%20formaci%C3%B3n%20industrial.webp",
+          "Mosaico%20isom%C3%A9trico%20de%20publicaciones%20de%20Instagram%20sobre%20RETIE%202024.webp"
+        ]),
+        ...gh("04ac6c5a1df4e93176eb5ccbdd663b380ce9031f", [
+          "Invitaci%C3%B3n%20ExpoSolar%20Colombia%202025%20en%20smartphone.webp",
+          "Mockup%20corporativo%20de%20folletos%20Servimeters_11zon.webp",
+          "SM%20Vis%C3%ADtenos%20en%20ExpoSolar%202025_IG-02-02%20(1).webp",
+          "Stand%20Mockup_V3_11zon.webp",
+          "flyer-01_11zon.webp",
+          "flyer-02_11zon.webp",
+          "stories_11zon.webp"
+        ])
+      ],
+      "Hierros y Cementos Social Media": gh("main", [
+        "Carruseles-Hierros-y-Cementos_1_.webp",
+        "Carruseles-Hierros-y-Cementos.webp",
+        "Carruseles-Hierros-y-Cementos_2_.webp",
+        "Carruseles-Hierros-y-Cementos_3_.webp",
+        "Carruseles-Hierros-y-Cementos_5_.webp",
+        "Carruseles-Hierros-y-Cementos_6_.webp"
+      ]),
+      "Branding de marcas": BRANDS.map(b => GH + b[0] + "/" + b[1]),
+      "CCR": gh("45945061208c10e0496910400cba1f02f2be1930", [
+        "%5BJotako%5D%20Behance%20CCR-10-convertido-de-png.webp",
+        "BRAND-14.webp",
+        "%5BCCRe%5D%20Manual%20de%20Marca-05-convertido-de-jpg.webp",
+        "%5BCCRe%5D%20Manual%20de%20Marca-08-convertido-de-jpg.webp",
+        "%5BCCRe%5D%20Manual%20de%20Marca-13-convertido-de-png.webp",
+        "%5BCCRe%5D%20Manual%20de%20Marca-23-convertido-de-jpg.webp",
+        "%5BJotako%5D%20Behance%20CCR-04-convertido-de-jpg.webp",
+        "%5BJotako%5D%20Behance%20CCR-05-convertido-de-jpg.webp",
+        "%5BJotako%5D%20Behance%20CCR-06-convertido-de-jpg.webp",
+        "%5BJotako%5D%20Behance%20CCR-07-convertido-de-jpg.webp"
+      ]).concat(
+        // Animación del logo CCR (GIF pesado: ~20 MB; ver V1-ligero.webp)
+        gh("a751f26ebf91455ef43443f6c2c5b91751e5bbe3", ["V1.gif"])
+      ),
+      "Hangar": gh("aa73b78f83a50aa3ee5d96b8dfc0664b3b99e8ca", [
+        "hangar%20logo%20panama.webp",
+        "2026-10-16%2013_02_57-%232-convertido-de-png.webp",
+        "2026-10-16%2013_03_33-%232-convertido-de-png.webp",
+        "hangar%20publicidad.webp",
+        "hangar%20volantes.webp",
+        "hangar.webp"
+      ]),
+      "Life Panama": gh("5b1c0fc04beab3b43b2a6e63108396a2f756446d", [
+        "Life%2018.webp",
+        "life%20panama%20editorial.webp",
+        "%5B015604%5D-convertido-de-jpg.webp",
+        "%5B015592%5D-convertido-de-jpg.webp",
+        "%5B003790%5D-convertido-de-jpg.webp",
+        "%5B003780%5D-convertido-de-jpg.webp",
+        "Life%20Newsletter_v2_%2314-01-01.webp",
+        "Life%20Lanzamiento!%20%2328%20Junio_Mesa%20de%20trabajo%201.webp",
+        "LIFE%20PANAMA%20%2327%20Edici%C3%B3n%20Mayo%202018_v1.3.2_049.webp"
+      ]),
+      "Celebrando Diversidades": gh("b59615b00d203a52a2273e9eab578393a025f42f", [
+        "editorial.webp",
+        "editorial%20mockup.webp",
+        "%5BJotako%5D%20Behance%20Editorial%202024-06-convertido-de-png.webp",
+        "%5BJotako%5D%20Behance%20Editorial%202024-05-convertido-de-png.webp",
+        "%5BJotako%5D%20Behance%20Editorial%202024-04-convertido-de-png.webp",
+        "%5BJotako%5D%20Behance%20Editorial%202024-03-convertido-de-png.webp",
+        "%5BJotako%5D%20Behance%20Editorial%202024-02-convertido-de-png.webp",
+        "Proyecto%20Editorial_Mesa%20de%20trabajo%201-convertido-de-png.webp",
+        "Proyecto%20Editorial-05-convertido-de-png.webp",
+        "Proyecto%20Editorial-04-convertido-de-png.webp",
+        "Proyecto%20Editorial-02-convertido-de-png.webp"
+      ]),
+      "Packaging": gh("f32847b1c9c354f9ca1e10302c2926c47894e9e5", [
+        "ChatGPT%20Image%2028%20sept%202026%2C%2012_23_19.webp",
+        "ChatGPT%20Image%2028%20sept%202026%2C%2012_26_54.webp",
+        "Colombian%20Coffee%20Etiquetas%20500gr.%20(7X15CM)%20Mula.webp",
+        "Colombian%20Coffee%20Newsletter%20JUNIO%2019.webp",
+        "Newsletter%20JUNIO%201X-07.webp",
+        "Plateado%20Regional-POST.webp",
+        "WhatsApp%20Image%202026-09-28%20at%2010.57.09%20AM.webp",
+        "classic-roast-by-colombiancoffeeus-752487.webp",
+        "para%20mockup.webp",
+        "para-enviar.webp"
+      ]),
+      "Rebranding Colombian Coffee": gh("17cd7bd74cf83544f18671696538ecd8646e04eb", [
+        "COLOMBIAN%20COFFEE%20BRAND_SELLO.jpg",
+        "COLOMBIAN%20COFFEE%20BRAND-09.png",
+        "COLOMBIAN%20COFFEE%20BRAND-08.png"
+      ]),
+      "Lola's Day Care Panama": gh("8c1ebeeb20bb923acbf91c9794ecb0908957d371", [
+        "%5BJotako%5D%20Lola's%20App%20Ingreso%20UI-UX-08.webp",
+        "lolas.webp",
+        "flujo%20lolas%20app.webp",
+        "%5BJotako%5D%20Lola's%20App%20Ingreso%20UI-UX-07.webp",
+        "%5BJotako%5D%20Lola's%20App%20Ingreso%20UI-UX-05.webp",
+        "%5BJotako%5D%20Lola's%20App%20Ingreso%20UI-UX-04.webp",
+        "Lola's%20Registro%20flujo-09.webp",
+        "%24R48K3J4-convertido-de-jpg.webp",
+        "%24R42FN1E-convertido-de-jpg.webp"
+      ])
+      // Agrega más proyectos aquí cuando tengas imágenes.
+    };
+
+    const PLACE = {
+      co: ["Colombia", "Colombia"],
+      es: ["España", "Spain"],
+      pa: ["Panamá", "Panama"],
+      ar: ["Argentina", "Argentina"],
+      us: ["Florida, USA", "Florida, USA"]
+    };
+
+    const JOBS = [
+      ["COTECNOVA", 2013, "co", "Diseñador Gráfico, Docente y Asistente de Marketing", "Graphic Designer, Teacher & Marketing Assistant", "Diseño gráfico, apoyo a marketing y docencia a estudiantes de diseño.", "Graphic design, marketing support, and teaching design students."],
+      ["PUNTO CLICK", 2014, "es", "Diseñador Web", "Web Designer", "Diseño visual de sitios web y propuestas gráficas digitales.", "Visual website design and digital graphic proposals."],
+      ["3D STUDIO", 2015, "co", "Diseñador Gráfico e Impresor", "Graphic Designer & Printer", "Piezas gráficas para impresión y diseño aplicado a espacios.", "Print graphic pieces and design applied to spaces."],
+      ["MULTIPRINT", 2015, "co", "Diseñador Gráfico e Impresor", "Graphic Designer & Printer", "Diseño y producción para impresión. Operación de plotters.", "Design and production for printing. Plotter operation."],
+      ["LIFE PANAMA INC.", 2016, "pa", "Diseñador Gráfico Editorial", "Editorial Graphic Designer", "Diseño editorial y maquetación de revista digital mensual.", "Editorial design and layout for a monthly digital magazine."],
+      ["LÁSER CREACIONES & DISEÑOS", 2018, "co", "Diseñador Gráfico", "Graphic Designer", "Productos personalizados en MDF. Operación de corte láser.", "Custom MDF products. Laser cutting operation."],
+      ["CONEXIÓN MP", 2019, "co", "Diseñador Gráfico e Impresor", "Graphic Designer & Printer", "Diseño para impresión y producción a gran escala.", "Design for large-scale print production."],
+      ["MARKETING108", 2020, "co", "Diseñador Gráfico", "Graphic Designer", "Maquetación de manuales de marca y sistemas de identidad visual.", "Layout of brand manuals and visual identity systems."],
+      ["KREATION INTERACTIVE", 2020, "ar", "Diseñador Gráfico", "Graphic Designer", "Propuestas de marca, señalización empresarial y contenido para redes.", "Brand proposals, corporate signage, and social media content."],
+      ["PERFECT COLORS", 2020, "co", "Diseñador Gráfico & Ilustrador Digital", "Graphic Designer & Digital Illustrator", "Contenido para redes, sublimación e ilustración de personajes.", "Social media content, sublimation, and character illustration."],
+      ["NEUROPUBLICIDAD", 2021, "co", "Diseñador Gráfico", "Graphic Designer", "Piezas gráficas para comunicación y publicidad. Plantillas funcionales.", "Graphic pieces for communication and advertising. Functional templates."],
+      ["CCR", 2022, "us", "Director Creativo y Diseñador Gráfico", "Creative Director & Graphic Designer", "Rebranding de cuentas, manuales de marca y mentoría a diseñadores.", "Account rebranding, brand manuals, and designer mentoring."],
+      ["SERVIMETERS", "2024 - 2026", "co", "Diseñador de Publicidad", "Advertising Designer", "Diseño UI, brochures, campañas y comunicación corporativa.", "UI design, brochures, campaigns, and corporate communication."]
+    ];
+
+    /* ===== Logofolios Data ===== */
+    const logoFolders = [
+      {
+        id: "restaurant-food",
+        label: "Restaurantes y Comida",
+        description: "Identidades de logotipo creadas para restaurantes, marcas de comida y servicios culinarios.",
+        labelEn: "Restaurants & Food",
+        descriptionEn: "Logo identities created for restaurants, food brands and culinary services.",
+        images: [
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4_Mesa%20de%20trabajo%201.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-15.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-14.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-12.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-11.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-09.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-08.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-07.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-06.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-04.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-03.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-02.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/4ddef549daddc508981951c08714a45480f31dd8/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.4-13.png"
+        ]
+      },
+      {
+        id: "health-education",
+        label: "Salud y Educación",
+        description: "Identidades de marca para negocios de salud, bienestar y educación.",
+        labelEn: "Health & Education",
+        descriptionEn: "Brand identities for health, wellness and education businesses.",
+        images: [
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-10.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1_Mesa%20de%20trabajo%201.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-08.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-07.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-06.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-05.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-04.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-03.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/26fffbf5659a41abb696711f2060e02c5cdd13c9/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.1-09.png"
+        ]
+      },
+      {
+        id: "agencies-personal",
+        label: "Agencias y Marcas Personales",
+        description: "Logotipos diseñados para agencias, consultores y proyectos de marca personal.",
+        labelEn: "Agencies & Personal Brands",
+        descriptionEn: "Logos designed for agencies, consultants and personal brand projects.",
+        images: [
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2_Mesa%20de%20trabajo%201.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-11.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-09.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-08.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-07.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-06.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-05.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-04.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-03.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-02.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/5a34473abeb6b43bc294fe1b69a0fd6d2b3f92f1/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.2-13.png"
+        ]
+      },
+      {
+        id: "fashion-beauty",
+        label: "Moda y Belleza",
+        description: "Diseños de logotipo para marcas de moda, belleza y estilo de vida.",
+        labelEn: "Fashion & Beauty",
+        descriptionEn: "Logo designs for fashion, beauty and lifestyle brands.",
+        images: [
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3_Mesa%20de%20trabajo%201.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-09.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-08.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-07.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-06.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-05.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-04.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-03.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-02.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/43ac76f70dd3a6cfb894995593263bd7d98b24ff/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.3-13.png"
+        ]
+      },
+      {
+        id: "radio-asmr",
+        label: "Radio y ASMR",
+        description: "Identidades de logotipo para estaciones de radio, podcasts y creadores de contenido ASMR.",
+        labelEn: "Radio & ASMR",
+        descriptionEn: "Logo identities for radio stations, podcasts and ASMR content creators.",
+        images: [
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5_Mesa%20de%20trabajo%201.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-11.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-09.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-08.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-07.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-06.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-05.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-04.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-03.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-02.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/0c6d3b02fbb47ec7a1053d07288abf2044f70f2d/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.5-13.png"
+        ]
+      },
+      {
+        id: "various-services",
+        label: "Servicios Varios",
+        description: "Una mezcla de identidades de logotipo diseñadas para diversos negocios de servicios.",
+        labelEn: "Various Services",
+        descriptionEn: "A mix of logo identities designed for a variety of service businesses.",
+        images: [
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6_Mesa%20de%20trabajo%201.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-11.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-09.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-08.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-07.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-06.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-05.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-04.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-03.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-02.png",
+          "https://raw.githubusercontent.com/Takoiartist/takoi-artist/24c1a4a64b056c9e3fd7db75169eb6b5b3cb3eaf/%5BJotako%5D%20Behance%20Logofolio%202024%20Vol.6-13.png"
+        ]
+      }
+    ];
+
+    /* ===== Utilidades ===== */
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    let LANG = 'es';
+
+    /* ===== Render Proyectos ===== */
+    const projWrap = $('#projects');
+    function renderProjects() {
+      if (!projWrap) return;
+      const es = LANG === 'es';
+      projWrap.innerHTML = PROJECTS.map((p, i) => {
+        const imgs = PROJECT_IMAGES[p[0]];
+        const hasImgs = imgs && imgs.length > 0;
+        const link = PROJECT_LINKS[p[0]];
+        const mock = hasImgs
+          ? `<div class="mock has-img" data-i="${i}" role="button" tabindex="0" aria-label="${es ? 'Ver imágenes de' : 'View images of'} ${p[0]}">
+               <img src="${imgs[0]}" alt="${p[0]}" loading="lazy">
+               <span class="cnt"><i class="bi bi-zoom-in"></i> ${imgs.length} ${es ? (imgs.length === 1 ? 'imagen' : 'imágenes') : (imgs.length === 1 ? 'image' : 'images')}</span>
+             </div>`
+          : `<div class="mock">
+               <b>${p[0]}</b>
+               <small>${es ? p[3] : p[4]}</small>
+             </div>`;
+        const more = link
+          ? `<a class="proj-link" href="${link}" target="_blank" rel="noopener">${link.toLowerCase().endsWith('.pdf') ? (es ? 'Ver PDF del proyecto' : 'View project PDF') : (es ? 'Ver proyecto en Behance' : 'View project on Behance')} <i class="bi bi-box-arrow-up-right"></i></a>`
+          : '';
+        const L = PROJECT_LISTS[p[0]];
+        const bb = L
+          ? `<details class="bb"><summary><i class="bi ${L.icon}"></i> ${es ? L.es : L.en}</summary><ul>${L.items.map(b => `<li><a href="${b.url}" target="_blank" rel="noopener">${b.name} <i class="bi bi-box-arrow-up-right"></i></a></li>`).join('')}</ul></details>`
+          : '';
+        return `
+          <article class="card">
+            ${mock}
+            <h3>${p[0]}</h3>
+            <div class="m">${es ? p[1] : p[2]}</div>
+            <p>${es ? p[5] : p[6]}</p>
+            ${more}${bb}
+          </article>
+        `;
+      }).join('');
+
+      projWrap.querySelectorAll('.mock.has-img').forEach(mock => {
+        const open = () => {
+          const p = PROJECTS[+mock.dataset.i];
+          openLB(PROJECT_IMAGES[p[0]], 0, p[0]);
+        };
+        mock.addEventListener('click', open);
+        mock.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+    }
+    renderProjects();
+
+    /* ===== Render Timeline (tinta + zoom) ===== */
+    const tlWrap = $('#timeline');
+    const TL_LV = [.85, 1, 1.2, 1.4, 1.65];
+    let TL_I = 1;
+    const TL = {};
+    const SVGNS = 'http://www.w3.org/2000/svg';
+
+    function renderTimeline() {
+      if (!tlWrap) return;
+      const es = LANG === 'es';
+      const items = JOBS.map((j, i) => {
+        const place = PLACE[j[2]];
+        const hl = j[1] === '2024 - 2026';
+        const long = String(j[1]).length > 4;
+        return `
+          <article class="tl-item ${i % 2 === 0 ? 'l' : 'r'}${hl ? ' hl' : ''}">
+            <div class="tl-card" tabindex="0">
+              <span class="tl-n">Nº ${String(i + 1).padStart(2, '0')}</span>
+              <span class="tl-yr${long ? ' long' : ''}">${j[1]}</span>
+              <h3>${j[0]}</h3>
+              <div class="tl-loc">${es ? place[0] : place[1]}</div>
+              <div class="tl-role">${es ? j[3] : j[4]}</div>
+              <p>${es ? j[5] : j[6]}</p>
+              ${hl ? `<em>${es ? 'Destacado' : 'Featured'}</em>` : ''}
+            </div>
+            <span class="tl-dot"></span>
+          </article>`;
+      }).join('');
+
+      tlWrap.innerHTML = `
+        <div class="tl-bar">
+          <div class="tl-zoom" role="group" aria-label="Zoom">
+            <span class="zl">Zoom</span>
+            <button type="button" data-z="-1" aria-label="${es ? 'Reducir texto' : 'Smaller text'}">−</button>
+            <output></output>
+            <button type="button" data-z="1" aria-label="${es ? 'Ampliar texto' : 'Larger text'}">+</button>
+          </div>
+        </div>
+        <svg class="tl-ink" aria-hidden="true">
+          <defs>
+            <filter id="rough" x="-5%" y="-2%" width="110%" height="104%">
+              <feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="4" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+            </filter>
+            <mask id="inkMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="4000" height="20000">
+              <path id="maskPath" fill="none" stroke="#fff" stroke-width="44" stroke-linecap="round"/>
+            </mask>
+          </defs>
+          <g mask="url(#inkMask)"><path class="ink-ribbon" id="ribbon" filter="url(#rough)"/></g>
+          <g id="nib" opacity="0"><g transform="rotate(30)">
+            <path class="nib-body" d="M-4 -30 L-7 -70 Q0 -76 9 -70 L6 -30 Z"/>
+            <path class="nib-tip" d="M0 0 L-5 -15 L-4 -31 L7 -31 L6 -15 Z"/>
+            <path d="M.5 -2 L.5 -14" stroke="#fff" stroke-width=".9" fill="none"/>
+            <circle cx=".5" cy="-17" r="1.6" fill="#fff"/>
+          </g></g>
+        </svg>
+        <div class="tl-list">${items}</div>`;
+
+      initTimeline();
+    }
+
+    function initTimeline() {
+      const wrap = tlWrap;
+      if (TL.ro) TL.ro.disconnect();
+      if (TL.onScroll) {
+        removeEventListener('scroll', TL.onScroll);
+        removeEventListener('resize', TL.onScroll);
+      }
+      cancelAnimationFrame(TL.raf || 0);
+
+      const ribbon = $('#ribbon', wrap), maskPath = $('#maskPath', wrap), nib = $('#nib', wrap), svg = $('.tl-ink', wrap);
+      const itemEls = $$('.tl-item', wrap), dots = $$('.tl-dot', wrap);
+      const out = $('.tl-zoom output', wrap), btns = $$('.tl-zoom button', wrap);
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let len = 0, probe = null, ys = [], cur = reduce ? 1 : 0, target = cur;
+
+      function applyZoom() {
+        wrap.style.setProperty('--z', TL_LV[TL_I]);
+        out.textContent = Math.round(TL_LV[TL_I] * 100) + '%';
+        btns[0].disabled = TL_I === 0;
+        btns[1].disabled = TL_I === TL_LV.length - 1;
+      }
+      btns.forEach(b => b.addEventListener('click', () => {
+        TL_I = Math.max(0, Math.min(TL_LV.length - 1, TL_I + (+b.dataset.z)));
+        applyZoom();
+      }));
+      applyZoom();
+
+      /* Construye la cinta de tinta (pluma de punta ancha) siguiendo los puntos */
+      function build() {
+        const r = wrap.getBoundingClientRect();
+        const W = r.width, H = r.height;
+        svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+        const mobile = innerWidth <= 860;
+        const pts = dots.map(d => {
+          const b = d.getBoundingClientRect();
+          return [b.left + b.width / 2 - r.left, b.top + b.height / 2 - r.top];
+        });
+        ys = pts.map(p => p[1]);
+        const f = pts[0], l = pts[pts.length - 1];
+        const all = [[f[0], f[1] - 90], ...pts, [l[0], l[1] + 120]];
+        const amp = mobile ? 9 : 62;
+        let d = `M${all[0][0]} ${all[0][1]}`;
+        for (let i = 1; i < all.length; i++) {
+          const [x0, y0] = all[i - 1], [x1, y1] = all[i];
+          const s = i % 2 ? 1 : -1, dy = y1 - y0;
+          d += ` C${x0 + s * amp} ${y0 + dy * .32} ${x1 + s * amp} ${y1 - dy * .32} ${x1} ${y1}`;
+        }
+        probe = document.createElementNS(SVGNS, 'path');
+        probe.setAttribute('d', d);
+        len = probe.getTotalLength();
+
+        const step = 3, n = Math.ceil(len / step);
+        const nibAng = -Math.PI / 4;           // ángulo de la punta de la pluma
+        const L = [], R = [];
+        for (let k = 0; k <= n; k++) {
+          const s = Math.min(len, k * step);
+          const p = probe.getPointAtLength(s), q = probe.getPointAtLength(Math.min(len, s + 1.5)), o = probe.getPointAtLength(Math.max(0, s - 1.5));
+          const ang = Math.atan2(q.y - o.y, q.x - o.x);
+          const press = .75 + .25 * Math.sin(s / 41) + .12 * Math.sin(s / 13 + 1.3);
+          const taper = Math.max(.12, Math.min(1, s / 70, (len - s) / 110));
+          const w = Math.max(1, (1.6 + 5.4 * Math.abs(Math.sin(ang - nibAng))) * press * taper);
+          const nx = -Math.sin(ang), ny = Math.cos(ang);
+          L.push(`${(p.x + nx * w / 2).toFixed(1)} ${(p.y + ny * w / 2).toFixed(1)}`);
+          R.push(`${(p.x - nx * w / 2).toFixed(1)} ${(p.y - ny * w / 2).toFixed(1)}`);
+        }
+        ribbon.setAttribute('d', 'M' + L.join('L') + 'L' + R.reverse().join('L') + 'Z');
+        maskPath.setAttribute('d', d);
+        maskPath.style.strokeDasharray = `${len} ${len + 20}`;
+        paint(cur);
+      }
+
+      function paint(p) {
+        if (!probe) return;
+        maskPath.style.strokeDashoffset = len * (1 - p);
+        const pt = probe.getPointAtLength(len * p);
+        nib.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+        nib.setAttribute('opacity', p > .002 && !reduce ? 1 : 0);
+        itemEls.forEach((el, i) => el.classList.toggle('on', reduce || ys[i] <= pt.y + 12));
+      }
+
+      function measure() {
+        const r = wrap.getBoundingClientRect();
+        target = reduce ? 1 : Math.max(0, Math.min(1, (innerHeight * .62 - r.top) / r.height));
+      }
+      function frame() {
+        cur += (target - cur) * .1;
+        if (Math.abs(target - cur) < .0004) cur = target;
+        paint(cur);
+        TL.raf = cur !== target ? requestAnimationFrame(frame) : 0;
+      }
+      TL.onScroll = () => { measure(); if (!TL.raf) TL.raf = requestAnimationFrame(frame); };
+      addEventListener('scroll', TL.onScroll, { passive: true });
+      addEventListener('resize', TL.onScroll);
+
+      let rb = 0;
+      TL.ro = new ResizeObserver(() => { cancelAnimationFrame(rb); rb = requestAnimationFrame(() => { build(); TL.onScroll(); }); });
+      TL.ro.observe(wrap);
+
+      build();
+      measure();
+      cur = target; paint(cur);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { build(); TL.onScroll(); });
+    }
+
+    renderTimeline();
+
+    /* ===== Render Logofolio (Carrusel) ===== */
+    const tabsEl = document.getElementById('folderTabs');
+    const contentEl = document.getElementById('folderTabsContent');
+    const carouselState = {};
+
+    function renderStage(folder) {
+      const idx = carouselState[folder.id];
+      const total = folder.images.length;
+      const stage = document.getElementById(`stage-img-${folder.id}`);
+      const counter = document.getElementById(`counter-${folder.id}`);
+      if (!stage || !counter) return;
+      stage.style.opacity = 0;
+      setTimeout(() => {
+        stage.setAttribute('src', folder.images[idx]);
+        stage.style.opacity = 1;
+      }, 120);
+      counter.textContent = `${idx + 1} / ${total}`;
+      document.querySelectorAll(`#thumbs-${folder.id} .thumb-item`).forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+      const activeThumb = document.querySelector(`#thumbs-${folder.id} .thumb-item.active`);
+      if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    function goTo(folder, newIdx) {
+      const total = folder.images.length;
+      carouselState[folder.id] = (newIdx + total) % total;
+      renderStage(folder);
+    }
+
+    if (tabsEl && contentEl) {
+      logoFolders.forEach((folder, i) => {
+        const isActive = i === 0;
+        carouselState[folder.id] = 0;
+
+        const li = document.createElement('li');
+        li.className = 'nav-item';
+        li.setAttribute('role', 'presentation');
+        li.innerHTML = `
+          <button class="nav-link${isActive ? ' active' : ''}" id="tab-${folder.id}"
+                  data-bs-toggle="tab" data-bs-target="#pane-${folder.id}"
+                  type="button" role="tab" aria-controls="pane-${folder.id}"
+                  aria-selected="${isActive}">
+            ${folder.label}<span class="count">${folder.images.length}</span>
+          </button>`;
+        tabsEl.appendChild(li);
+
+        const pane = document.createElement('div');
+        pane.className = `tab-pane fade${isActive ? ' show active' : ''}`;
+        pane.id = `pane-${folder.id}`;
+        pane.setAttribute('role', 'tabpanel');
+        pane.setAttribute('aria-labelledby', `tab-${folder.id}`);
+
+        const thumbsHTML = folder.images.map((src, idx) => `
+          <div class="thumb-item${idx === 0 ? ' active' : ''}" data-idx="${idx}">
+            <img src="${src}" alt="${folder.label} miniatura ${idx + 1}" loading="lazy">
+          </div>`).join('');
+
+        pane.innerHTML = `
+          <div class="folder-heading">
+            <h3>${folder.label}</h3>
+            <p>${folder.description}</p>
+          </div>
+          <div class="logo-carousel">
+            <div class="carousel-stage">
+              <button class="carousel-nav-btn prev" aria-label="Logotipo anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <img id="stage-img-${folder.id}" src="${folder.images[0]}" alt="${folder.label} logotipo" data-bs-toggle="modal" data-bs-target="#lightboxModal">
+              <button class="carousel-nav-btn next" aria-label="Logotipo siguiente">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+              <span class="carousel-counter" id="counter-${folder.id}">1 / ${folder.images.length}</span>
+            </div>
+            <div class="thumb-strip" id="thumbs-${folder.id}">
+              ${thumbsHTML}
+            </div>
+          </div>`;
+
+        contentEl.appendChild(pane);
+
+        pane.querySelector('.carousel-nav-btn.prev').addEventListener('click', () => goTo(folder, carouselState[folder.id] - 1));
+        pane.querySelector('.carousel-nav-btn.next').addEventListener('click', () => goTo(folder, carouselState[folder.id] + 1));
+        pane.querySelectorAll('.thumb-item').forEach(thumb => {
+          thumb.addEventListener('click', () => goTo(folder, parseInt(thumb.getAttribute('data-idx'), 10)));
+        });
+      });
+    }
+
+    /* Traduce en el lugar los textos del Logofolio (conserva pestaña activa y logo actual) */
+    function translateLogofolio() {
+      const es = LANG === 'es';
+      logoFolders.forEach(f => {
+        const label = es ? f.label : f.labelEn;
+        const tab = document.getElementById(`tab-${f.id}`);
+        if (tab && tab.firstChild) tab.firstChild.nodeValue = label;
+        const pane = document.getElementById(`pane-${f.id}`);
+        if (!pane) return;
+        const h3 = pane.querySelector('.folder-heading h3');
+        const desc = pane.querySelector('.folder-heading p');
+        if (h3) h3.textContent = label;
+        if (desc) desc.textContent = es ? f.description : f.descriptionEn;
+        const stage = document.getElementById(`stage-img-${f.id}`);
+        if (stage) stage.alt = es ? `${label} logotipo` : `${label} logo`;
+        pane.querySelectorAll('.thumb-item img').forEach((img, i) => {
+          img.alt = es ? `${label} miniatura ${i + 1}` : `${label} thumbnail ${i + 1}`;
+        });
+        const pv = pane.querySelector('.carousel-nav-btn.prev');
+        const nx = pane.querySelector('.carousel-nav-btn.next');
+        if (pv) pv.setAttribute('aria-label', es ? 'Logotipo anterior' : 'Previous logo');
+        if (nx) nx.setAttribute('aria-label', es ? 'Logotipo siguiente' : 'Next logo');
+      });
+    }
+
+    /* ===== Lightbox (Proyectos) con zoom ===== */
+    const lb = $('#lb'), lbImg = $('#lb-img'), lbCap = $('#lb-cap'), lbTh = $('#lb-thumbs');
+    const lbStage = $('#lb-stage'), lbLevel = $('#lb-level'), lbLink = $('#lb-link');
+    let lbImgs = [], lbIdx = 0, lbTitle = '';
+    const Z = { s: 1, x: 0, y: 0 }, Z_MAX = 5;
+
+    function applyZoom() {
+      Z.s = Math.min(Z_MAX, Math.max(1, Z.s));
+      if (Z.s === 1) { Z.x = 0; Z.y = 0; }
+      else {
+        const r = lbStage.getBoundingClientRect();
+        const mx = Math.max(0, (lbImg.offsetWidth * Z.s - r.width) / 2);
+        const my = Math.max(0, (lbImg.offsetHeight * Z.s - r.height) / 2);
+        Z.x = Math.min(mx, Math.max(-mx, Z.x));
+        Z.y = Math.min(my, Math.max(-my, Z.y));
+      }
+      lbImg.style.transform = `translate(${Z.x}px, ${Z.y}px) scale(${Z.s})`;
+      lbStage.classList.toggle('zoomed', Z.s > 1);
+      lbLevel.textContent = Math.round(Z.s * 100) + '%';
+    }
+
+    // Zoom manteniendo fijo el punto (cx, cy) relativo al centro del visor
+    function zoomTo(newS, cx = 0, cy = 0) {
+      newS = Math.min(Z_MAX, Math.max(1, newS));
+      const k = newS / Z.s;
+      Z.x = cx - (cx - Z.x) * k;
+      Z.y = cy - (cy - Z.y) * k;
+      Z.s = newS;
+      applyZoom();
+    }
+
+    function resetZoom() { Z.s = 1; Z.x = 0; Z.y = 0; applyZoom(); }
+
+    function renderLB() {
+      lbImg.src = lbImgs[lbIdx];
+      const info = IMAGE_INFO[lbImgs[lbIdx]] || {};
+      lbCap.textContent = (info.cap || lbTitle) + (lbImgs.length > 1 ? ` · ${lbIdx + 1} / ${lbImgs.length}` : '');
+      if (info.link) {
+        const es = LANG === 'es', drive = info.link.includes('drive.google');
+        lbLink.href = info.link;
+        lbLink.innerHTML = (drive ? (es ? 'Ver brandbook' : 'View brandbook') : (es ? 'Ver proyecto' : 'View project')) + ' <i class="bi bi-box-arrow-up-right"></i>';
+        lbLink.hidden = false;
+      } else {
+        lbLink.hidden = true;
+      }
+      lbTh.innerHTML = lbImgs.length > 1
+        ? lbImgs.map((s, i) => `<button data-i="${i}" class="${i === lbIdx ? 'on' : ''}"><img src="${s}" alt="" loading="lazy"></button>`).join('')
+        : '';
+      const on = lbTh.querySelector('.on');
+      if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+      resetZoom();
+    }
+
+    function openLB(imgs, idx, title = '') {
+      lbImgs = imgs; lbIdx = idx; lbTitle = title;
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      renderLB();
+    }
+
+    function closeLB() {
+      lb.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    function stepLB(d) {
+      if (lbImgs.length < 2) return;
+      lbIdx = (lbIdx + d + lbImgs.length) % lbImgs.length;
+      renderLB();
+    }
+
+    if (lb) {
+      lb.querySelector('.x').onclick = closeLB;
+      lb.querySelector('.pv').onclick = () => stepLB(-1);
+      lb.querySelector('.nx').onclick = () => stepLB(1);
+      lb.querySelector('.zi').onclick = () => zoomTo(Z.s * 1.5);
+      lb.querySelector('.zo').onclick = () => zoomTo(Z.s / 1.5);
+      lb.querySelector('.zr').onclick = resetZoom;
+      lbTh.addEventListener('click', e => {
+        const b = e.target.closest('button[data-i]');
+        if (!b) return;
+        lbIdx = +b.dataset.i;
+        renderLB();
+      });
+
+      const centerOf = e => {
+        const r = lbStage.getBoundingClientRect();
+        return [e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2)];
+      };
+
+      // Rueda del mouse / trackpad
+      lbStage.addEventListener('wheel', e => {
+        e.preventDefault();
+        const [cx, cy] = centerOf(e);
+        zoomTo(Z.s * (e.deltaY < 0 ? 1.2 : 1 / 1.2), cx, cy);
+      }, { passive: false });
+
+      // Clic = zoom / alejar, arrastrar = mover, pellizco = zoom (táctil)
+      const ptrs = new Map();
+      let moved = false, pinch0 = 0, pinchS = 1, last = null;
+
+      lbStage.addEventListener('pointerdown', e => {
+        lbStage.setPointerCapture(e.pointerId);
+        ptrs.set(e.pointerId, e);
+        moved = false;
+        last = { x: e.clientX, y: e.clientY };
+        if (ptrs.size === 2) {
+          const [a, b] = [...ptrs.values()];
+          pinch0 = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+          pinchS = Z.s;
+        }
+      });
+
+      lbStage.addEventListener('pointermove', e => {
+        if (!ptrs.has(e.pointerId)) return;
+        ptrs.set(e.pointerId, e);
+        if (ptrs.size === 2) {
+          const [a, b] = [...ptrs.values()];
+          const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+          const [cx, cy] = centerOf({ clientX: (a.clientX + b.clientX) / 2, clientY: (a.clientY + b.clientY) / 2 });
+          moved = true;
+          zoomTo(pinchS * d / pinch0, cx, cy);
+        } else if (Z.s > 1) {
+          const dx = e.clientX - last.x, dy = e.clientY - last.y;
+          if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+          Z.x += dx; Z.y += dy;
+          last = { x: e.clientX, y: e.clientY };
+          lbStage.classList.add('drag');
+          applyZoom();
+        } else if (Math.hypot(e.clientX - last.x, e.clientY - last.y) > 6) {
+          moved = true;
+        }
+      });
+
+      const endPtr = e => {
+        if (!ptrs.has(e.pointerId)) return;
+        const wasSingle = ptrs.size === 1;
+        ptrs.delete(e.pointerId);
+        lbStage.classList.remove('drag');
+        if (wasSingle && !moved && e.type === 'pointerup') {
+          if (Z.s > 1) resetZoom();
+          else { const [cx, cy] = centerOf(e); zoomTo(2.5, cx, cy); }
+        }
+        if (ptrs.size === 1) { const r = [...ptrs.values()][0]; last = { x: r.clientX, y: r.clientY }; }
+      };
+      lbStage.addEventListener('pointerup', endPtr);
+      lbStage.addEventListener('pointercancel', endPtr);
+
+      // Clic en el fondo oscuro cierra
+      lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+
+      document.addEventListener('keydown', e => {
+        if (lb.hidden) return;
+        if (e.key === 'Escape') closeLB();
+        if (e.key === 'ArrowLeft') stepLB(-1);
+        if (e.key === 'ArrowRight') stepLB(1);
+        if (e.key === '+' || e.key === '=') zoomTo(Z.s * 1.5);
+        if (e.key === '-') zoomTo(Z.s / 1.5);
+        if (e.key === '0') resetZoom();
+      });
+      window.addEventListener('resize', () => { if (!lb.hidden) applyZoom(); });
+    }
+
+    /* ===== Idioma ===== */
+    const langBtn = $('#lang');
+    const langWrap = $('#langWrap');
+    function setLang(next) {
+      if (next === LANG) return;
+      LANG = next;
+      $('#l-es').classList.toggle('on', LANG === 'es');
+      $('#l-en').classList.toggle('on', LANG === 'en');
+      $('#lang-cur').textContent = LANG.toUpperCase();
+      document.documentElement.lang = LANG;
+      renderAll();
+      $$('[data-en]').forEach(el => {
+        if (!el.dataset.es) el.dataset.es = el.textContent;
+        el.textContent = LANG === 'es' ? el.dataset.es : el.dataset.en;
+      });
+      $$('.ln').forEach(l => l.dataset.t = l.textContent);
+      $$('[data-en-ph]').forEach(el => {
+        if (!el.dataset.esPh) el.dataset.esPh = el.placeholder;
+        el.placeholder = LANG === 'es' ? el.dataset.esPh : el.dataset.enPh;
+      });
+    }
+    if (langBtn) {
+      langBtn.onclick = e => {
+        e.stopPropagation();
+        const open = langWrap.classList.toggle('open');
+        langBtn.setAttribute('aria-expanded', open);
+      };
+      $$('.lang-menu button').forEach(b => b.onclick = () => {
+        setLang(b.dataset.lang);
+        langWrap.classList.remove('open');
+        langBtn.setAttribute('aria-expanded', 'false');
+      });
+      document.addEventListener('click', () => langWrap.classList.remove('open'));
+    }
+
+    (function () {
+      const wa = document.getElementById('wa-float');
+      if (wa) wa.href = 'https://wa.me/573145641237?text=' + encodeURIComponent('Hola Armando, vi tu portafolio y me gustaría hablar contigo.');
+    })();
+
+    function renderAll() {
+      renderProjects();
+      renderTimeline();
+      translateLogofolio();
+      const wa = $('#wa-float');
+      if (wa) {
+        const es = LANG === 'es';
+        wa.href = 'https://wa.me/573145641237?text=' + encodeURIComponent(es ? 'Hola Armando, vi tu portafolio y me gustaría hablar contigo.' : 'Hi Armando, I saw your portfolio and I would like to talk.');
+        wa.setAttribute('aria-label', es ? 'Escríbeme por WhatsApp' : 'Message me on WhatsApp');
+      }
+    }
+
+    /* ===== Pluma: vectorizando el rombo ===== */
+    (function () {
+      const vO = $('#vOuter'), vI = $('#vInner'), vL = $('#vLines'), gA = $('#vAnchors'), gH = $('#vHandles'), pen = $('#vPen');
+      if (!vO || !pen) return;
+      const NS = 'http://www.w3.org/2000/svg';
+      const BASE = {
+        O: [[100, 10], [180, 60], [160, 150], [100, 190], [40, 150], [20, 60]],
+        I: [[100, 40], [150, 70], [135, 130], [100, 160], [65, 130], [50, 70]]
+      };
+      const cur = { O: BASE.O.map(p => p.slice()), I: BASE.I.map(p => p.slice()) };
+      const st = { pO: [], pI: [], lines: false, sel: null, pen: [100, 10] };
+      const anchors = [];
+      ['O', 'I'].forEach(k => cur[k].forEach((p, i) => {
+        const el = document.createElementNS(NS, 'rect');
+        el.setAttribute('width', 4.4); el.setAttribute('height', 4.4);
+        gA.appendChild(el);
+        anchors.push({ k, i, p, el, on: false });
+      }));
+      const hl = [$('#vH1'), $('#vH2')], hc = [$('#vC1'), $('#vC2')];
+      const pts = a => a.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+
+      function render() {
+        vO.setAttribute('points', pts(st.pO));
+        vI.setAttribute('points', pts(st.pI));
+        if (st.lines) {
+          const o = cur.O;
+          vL.setAttribute('d', `M${o[0]}L${o[3]}M${o[5]}L${o[2]}M${o[1]}L${o[4]}`);
+        }
+        anchors.forEach(a => {
+          a.el.setAttribute('x', a.p[0] - 2.2);
+          a.el.setAttribute('y', a.p[1] - 2.2);
+          a.el.classList.toggle('on', a.on);
+          a.el.classList.toggle('sel', st.sel === a.p);
+        });
+        if (st.sel) {
+          const p = st.sel, r = [p[0] - 100, p[1] - 100], l = Math.hypot(r[0], r[1]) || 1;
+          const t = [-r[1] / l * 15, r[0] / l * 15];
+          [[1, 0], [-1, 1]].forEach(([sg, n]) => {
+            const x = p[0] + t[0] * sg, y = p[1] + t[1] * sg;
+            hl[n].setAttribute('x1', p[0]); hl[n].setAttribute('y1', p[1]);
+            hl[n].setAttribute('x2', x); hl[n].setAttribute('y2', y);
+            hc[n].setAttribute('cx', x); hc[n].setAttribute('cy', y);
+          });
+        }
+        gH.classList.toggle('on', !!st.sel);
+      }
+
+      const ease = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      const wait = ms => new Promise(r => setTimeout(r, ms));
+      const tween = (ms, fn) => new Promise(res => {
+        const t0 = performance.now();
+        (function f(now) {
+          const k = Math.min(1, (now - t0) / ms);
+          fn(ease(k)); render();
+          k < 1 ? requestAnimationFrame(f) : res();
+        })(t0);
+      });
+      const movePen = (x, y) => { st.pen = [x, y]; pen.setAttribute('transform', `translate(${x} ${y})`); };
+      const penTo = (x, y, ms) => { const f = st.pen.slice(); return tween(ms, k => movePen(f[0] + (x - f[0]) * k, f[1] + (y - f[1]) * k)); };
+      const show = (k, i) => { anchors.find(a => a.k === k && a.i === i).on = true; };
+
+      async function drawPoly(k, segMs) {
+        const P = cur[k], key = k === 'O' ? 'pO' : 'pI';
+        st[key] = [P[0], P[0]];
+        show(k, 0); render();
+        for (let i = 1; i <= P.length; i++) {
+          const a = P[i - 1], b = P[i % P.length];
+          await tween(segMs, e => {
+            const t = [a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e];
+            st[key] = [...P.slice(0, i), t];
+            movePen(t[0], t[1]);
+          });
+          if (i < P.length) show(k, i);
+        }
+        st[key] = [...P, P[0]];
+        render();
+      }
+
+      const still = () => {
+        st.pO = [...cur.O, cur.O[0]]; st.pI = [...cur.I, cur.I[0]]; st.lines = true;
+        anchors.forEach(a => a.on = true); vL.style.opacity = 1; render();
+      };
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return still();
+
+      (async function run() {
+        await wait(1700);
+        movePen(...cur.O[0]); pen.classList.add('on');
+        await drawPoly('O', 380);
+        await penTo(cur.I[0][0], cur.I[0][1], 500);
+        await drawPoly('I', 280);
+        st.lines = true; vL.style.opacity = 1; render();
+        await wait(700);
+        let last = -1;
+        while (true) {
+          let n; do { n = Math.floor(Math.random() * 12); } while (n === last);
+          last = n;
+          const k = n < 6 ? 'O' : 'I', i = n % 6, p = cur[k][i], b = BASE[k][i];
+          await penTo(p[0], p[1], 650);
+          st.sel = p; render();
+          await wait(250);
+          const r = [b[0] - 100, b[1] - 100], l = Math.hypot(r[0], r[1]);
+          const amt = (Math.random() < .7 ? 1 : -.6) * (9 + Math.random() * 12);
+          const tg = [b[0] + r[0] / l * amt, b[1] + r[1] / l * amt], s0 = p.slice();
+          await tween(950, e => {
+            p[0] = s0[0] + (tg[0] - s0[0]) * e; p[1] = s0[1] + (tg[1] - s0[1]) * e;
+            movePen(p[0], p[1]);
+          });
+          await wait(450);
+          st.sel = null; render();
+          await wait(350);
+        }
+      })();
+    })();
+
+    /* ===== Burger ===== */
+    const burger = $('#burger');
+    if (burger) {
+      burger.onclick = () => $('#menu').classList.toggle('open');
+    }
+
+    /* ===== Banner parallax ===== */
+    const banner = $('#banner');
+    if (banner) {
+      banner.addEventListener('mousemove', e => {
+        const r = banner.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5;
+        const y = (e.clientY - r.top) / r.height - .5;
+        banner.style.setProperty('--mx', x);
+        banner.style.setProperty('--my', y);
+      });
+    }
+
+    /* ===== Formulario (demo) ===== */
+    const form = $('#form');
+    if (form) {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        alert(LANG === 'es' ? '¡Gracias! Tu mensaje fue enviado.' : 'Thank you! Your message was sent.');
+        form.reset();
+      });
+    }
+  </script>
+</body>
+</html>
