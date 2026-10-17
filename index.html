@@ -1286,6 +1286,74 @@
       text-transform: uppercase;
     }
 
+    /* detalle desplegable: necesidad, aporte y resultado */
+    .tl-more {
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    .tl-item.l .tl-more > summary {
+      margin-left: auto;
+    }
+
+    .tl-more > summary {
+      display: block;
+      width: max-content;
+      cursor: pointer;
+      list-style: none;
+      padding: 6px 16px;
+      border-radius: 30px;
+      border: 1.5px solid var(--takoi);
+      color: var(--takoi);
+      font-size: .78em;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .tl-more > summary::-webkit-details-marker { display: none; }
+    .tl-more > summary::after { content: " +"; }
+    .tl-more[open] > summary::after { content: " –"; }
+    .tl-more > summary:hover { background: var(--takoi); color: #fff; }
+
+    .tl-more .tl-det {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(106, 68, 145, .35);
+    }
+
+    .tl-more h4 {
+      margin: 14px 0 4px;
+      font-size: .72em;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--takoi);
+    }
+
+    .tl-more h4:first-child { margin-top: 0; }
+
+    .tl-more .tl-det p,
+    .tl-more .tl-det li {
+      margin: 0;
+      font-size: .88em;
+      line-height: 1.55;
+      color: var(--gray);
+    }
+
+    .tl-more ul {
+      margin: 0;
+      padding-left: 1.1em;
+      display: grid;
+      gap: 4px;
+    }
+
+    .tl-item.hl .tl-more > summary { border-color: var(--off); color: var(--off); }
+    .tl-item.hl .tl-more > summary:hover { background: var(--off); color: var(--takoi); }
+    .tl-item.hl .tl-more .tl-det { border-top-color: rgba(245, 240, 232, .35); }
+    .tl-item.hl .tl-more h4 { color: var(--lav2); }
+    .tl-item.hl .tl-more .tl-det p,
+    .tl-item.hl .tl-more .tl-det li { color: var(--off); }
+
     /* tarjeta destacada (empleo actual) */
     .tl-item.hl .tl-card {
       background: var(--takoi);
@@ -2420,6 +2488,104 @@
       ["SERVIMETERS", "2024 - 2026", "co", "Diseñador de Publicidad", "Advertising Designer", "Diseño UI, brochures, campañas y comunicación corporativa.", "UI design, brochures, campaigns, and corporate communication."]
     ];
 
+    /* ===== Detalle por cargo: necesidad, aporte (lista) y resultado ===== */
+    const JOB_DETAIL = {
+      "SERVIMETERS": {
+        needEs: "La empresa necesitaba fortalecer la presentación visual de su portafolio de servicios, mantener la coherencia de su comunicación de marca y disponer de materiales gráficos para apoyar sus canales comerciales, digitales y de capacitación.",
+        needEn: "The company needed to strengthen the visual presentation of its service portfolio, keep its brand communication consistent, and have graphic materials to support its sales, digital and training channels.",
+        didEs: [
+          "Actualicé el portafolio de servicios, la línea gráfica y el universo visual de la empresa.",
+          "Diseñé y adapté campañas, banners, brochures, landing pages y materiales corporativos para medios digitales y comerciales.",
+          "Desarrollé plantillas y recursos gráficos para uso interno y procesos de capacitación.",
+          "Diseñé piezas publicitarias para webinars y programas de formación.",
+          "Gestioné contenidos visuales del sitio web, incluidos blogs, banners y actualizaciones.",
+          "Elaboré materiales para capacitaciones sincrónicas y asincrónicas, así como certificados para los programas formativos.",
+          "Apoyé la comunicación visual de servicios y programas comerciales.",
+          "Participé en la inducción y capacitación de ejecutivos comerciales sobre servicios y alcance de ONAC.",
+          "Apliqué conocimientos del contexto técnico de certificación, inspección, calibración y ensayos, así como de sistemas de gestión ISO y reglamentos técnicos relacionados con RETIE, RITEL y RETILAP, entre otros."
+        ],
+        didEn: [
+          "Updated the service portfolio, the graphic line and the company's visual universe.",
+          "Designed and adapted campaigns, banners, brochures, landing pages and corporate materials for digital and commercial media.",
+          "Developed templates and graphic resources for internal use and training processes.",
+          "Designed advertising pieces for webinars and training programs.",
+          "Managed the website's visual content, including blogs, banners and updates.",
+          "Produced materials for synchronous and asynchronous training, as well as certificates for the training programs.",
+          "Supported the visual communication of commercial services and programs.",
+          "Took part in the onboarding and training of sales executives on ONAC services and scope.",
+          "Applied technical knowledge of certification, inspection, calibration and testing, as well as ISO management systems and technical regulations such as RETIE, RITEL and RETILAP, among others."
+        ],
+        resEs: "Contribuí a fortalecer la presentación visual del portafolio de servicios, mantener la coherencia gráfica entre los materiales comerciales y digitales, y facilitar la disponibilidad de recursos para comunicación, formación y apoyo al equipo comercial.",
+        resEn: "I helped strengthen the visual presentation of the service portfolio, keep graphic consistency across commercial and digital materials, and make resources available for communication, training and sales team support."
+      },
+      "CCR": {
+        needEs: "Las marcas y cuentas de la empresa requerían procesos de renovación visual y criterios gráficos definidos para mejorar la consistencia de su identidad y la aplicación de marca en diferentes piezas.",
+        needEn: "The company's brands and accounts required visual renewal processes and defined graphic criteria to improve the consistency of their identity and how the brand was applied across different pieces.",
+        didEs: [
+          "Desarrollé procesos de rebranding para las cuentas de la empresa.",
+          "Analicé las marcas desde la perspectiva del branding, la identidad visual y la comunicación gráfica.",
+          "Creé y estructuré manuales de marca con lineamientos para su aplicación.",
+          "Orienté a diseñadores junior y practicantes recién egresados en el desarrollo de piezas gráficas.",
+          "Brindé acompañamiento en la aplicación de criterios visuales y lineamientos de identidad."
+        ],
+        didEn: [
+          "Developed rebranding processes for the company's accounts.",
+          "Analyzed brands from the perspective of branding, visual identity and graphic communication.",
+          "Created and structured brand manuals with guidelines for their application.",
+          "Mentored junior designers and recent-graduate interns in developing graphic pieces.",
+          "Provided guidance on applying visual criteria and identity guidelines."
+        ],
+        resEs: "Contribuí a estructurar sistemas de identidad visual más definidos, facilitar la aplicación coherente de las marcas y fortalecer los criterios gráficos utilizados por el equipo de diseño.",
+        resEn: "I helped build more clearly defined visual identity systems, make brand application more coherent, and strengthen the graphic criteria used by the design team."
+      },
+      "NEUROPUBLICIDAD": {
+        needEs: "Los procesos de comunicación y publicidad requerían piezas gráficas funcionales y recursos que facilitaran la producción recurrente de contenidos.",
+        needEn: "Communication and advertising processes required functional graphic pieces and resources that made recurring content production easier.",
+        didEs: [
+          "Diseñé y desarrollé piezas gráficas para comunicación y publicidad.",
+          "Creé plantillas funcionales para organizar y agilizar los procesos de producción gráfica."
+        ],
+        didEn: [
+          "Designed and developed graphic pieces for communication and advertising.",
+          "Created functional templates to organize and speed up graphic production processes."
+        ],
+        resEs: "Contribuí a disponer de recursos gráficos reutilizables y a optimizar la preparación de piezas para las necesidades de comunicación y publicidad.",
+        resEn: "I helped make reusable graphic resources available and optimize how pieces were prepared for communication and advertising needs."
+      },
+      "MARKETING108": {
+        needEs: "La construcción y aplicación de las identidades de marca requería documentación gráfica y lineamientos que permitieran mantener criterios visuales consistentes.",
+        needEn: "Building and applying brand identities required graphic documentation and guidelines to keep visual criteria consistent.",
+        didEs: [
+          "Diseñé y maqueté manuales de marca.",
+          "Apoyé el desarrollo y la estructuración de sistemas de identidad visual."
+        ],
+        didEn: [
+          "Designed and laid out brand manuals.",
+          "Supported the development and structuring of visual identity systems."
+        ],
+        resEs: "Contribuí a documentar los criterios de identidad visual y a facilitar su consulta y aplicación en el desarrollo de materiales gráficos.",
+        resEn: "I helped document visual identity criteria and make them easier to consult and apply when developing graphic materials."
+      },
+      "KREATION INTERACTIVE": {
+        needEs: "Las marcas atendidas requerían propuestas gráficas que representaran su identidad y permitieran comunicar sus mensajes en diferentes medios y aplicaciones.",
+        needEn: "The brands served required graphic proposals that represented their identity and allowed them to communicate their messages across different media and applications.",
+        didEs: [
+          "Desarrollé propuestas de marca y apoyé la creación de logotipos.",
+          "Diseñé líneas gráficas para fortalecer la comunicación visual de las marcas.",
+          "Elaboré piezas de señalización empresarial.",
+          "Desarrollé contenidos gráficos para redes sociales."
+        ],
+        didEn: [
+          "Developed brand proposals and supported logo creation.",
+          "Designed graphic lines to strengthen the brands' visual communication.",
+          "Produced corporate signage pieces.",
+          "Developed graphic content for social media."
+        ],
+        resEs: "Contribuí al desarrollo de propuestas de identidad y recursos visuales aplicables a distintos canales de comunicación, desde redes sociales hasta señalización empresarial.",
+        resEn: "I contributed to identity proposals and visual resources applicable to different communication channels, from social media to corporate signage."
+      }
+    };
+
     /* ===== Logofolios Data ===== */
     const logoFolders = [
       {
@@ -2611,6 +2777,19 @@
         const place = PLACE[j[2]];
         const hl = j[1] === '2024 - 2026';
         const long = String(j[1]).length > 4;
+        const D = JOB_DETAIL[j[0]];
+        const more = D ? `
+              <details class="tl-more">
+                <summary>${es ? 'Ver detalle' : 'View details'}</summary>
+                <div class="tl-det">
+                  <h4>${es ? 'Necesidad' : 'Need'}</h4>
+                  <p>${es ? D.needEs : D.needEn}</p>
+                  <h4>${es ? 'Mi aporte' : 'My contribution'}</h4>
+                  <ul>${(es ? D.didEs : D.didEn).map(t => `<li>${t}</li>`).join('')}</ul>
+                  <h4>${es ? 'Resultado o valor generado' : 'Result or value generated'}</h4>
+                  <p>${es ? D.resEs : D.resEn}</p>
+                </div>
+              </details>` : '';
         return `
           <article class="tl-item ${i % 2 === 0 ? 'l' : 'r'}${hl ? ' hl' : ''}">
             <div class="tl-card" tabindex="0">
@@ -2620,6 +2799,7 @@
               <div class="tl-loc">${es ? place[0] : place[1]}</div>
               <div class="tl-role">${es ? j[3] : j[4]}</div>
               <p>${es ? j[5] : j[6]}</p>
+              ${more}
               ${hl ? `<em>${es ? 'Destacado' : 'Featured'}</em>` : ''}
             </div>
             <span class="tl-dot"></span>
