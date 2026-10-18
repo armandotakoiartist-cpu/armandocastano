@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Armando Castaño · Director Creativo y Director de Arte</title>
+  <script>
+    /* Oculta el nombre del hero hasta que carguen las fuentes (máx. 3 s) para evitar el salto de tipografía */
+    document.documentElement.classList.add('fl');
+    setTimeout(function () { document.documentElement.classList.remove('fl'); }, 3000);
+  </script>
   <meta name="description" content="Portafolio de Armando Castaño: Director Creativo y Art Director con más de 10 años de experiencia en branding, diseño editorial y motion graphics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -605,7 +610,10 @@
 
     .txt h1 {
       font: inherit;
+      transition: opacity .5s ease;
     }
+
+    .fl .txt h1 { opacity: 0; }
 
     .ln {
       display: block;
@@ -2102,7 +2110,7 @@
             <span data-en="Corporate Comms">Comunicación Corporativa</span>
             <span data-en="Creative Direction">Dirección Creativa</span>
           </div>
-          <a class="pill outline" href="mailto:armando.takoi.artist@gmail.com?subject=Solicitud%20de%20CV%20-%20Armando%20Casta%C3%B1o">
+          <a class="pill outline" href="Dise%C3%B1ador%20Gr%C3%A1fico%20y%20Visual%20-%20Armando%20Casta%C3%B1o%20CV%202026.pdf" download="Armando Castaño - CV 2026.pdf">
             <span data-en="Download CV">Descargar CV</span>
           </a>
         </div>
@@ -2116,7 +2124,7 @@
         <h2 class="t" style="margin-top:20px" data-en="Featured Projects">Proyectos Destacados</h2>
         <p class="sub" data-en="The best of my recent work">Lo mejor de mi trabajo reciente</p>
         <div class="grid" id="projects"></div>
-        <a class="pill more" href="https://www.behance.net/jotako" target="_blank" rel="noopener" data-en="View all projects">Ver todos los proyectos</a>
+        <a class="pill more" href="https://www.behance.net/armandotakoi" target="_blank" rel="noopener" data-en="View all projects">Ver todos los proyectos</a>
       </div>
     </section>
 
@@ -2189,8 +2197,8 @@
       <a href="https://instagram.com/Takoiartist" target="_blank" rel="noopener">
         <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/Recurso%20131.png" alt="Instagram" height="20"> @Takoiartist
       </a>
-      <a href="https://www.behance.net/jotako" target="_blank" rel="noopener">
-        <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/behance.png" alt="Behance" height="20"> @jotako
+      <a href="https://www.behance.net/armandotakoi" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/ea11d1f15eab902f52023e64a1fb70aa56b20a30/behance.png" alt="Behance" height="20"> @armandotakoi
       </a>
     </div>
     <p data-en="© 2026 Armando Castaño · All rights reserved">© 2026 Armando Castaño · Todos los derechos reservados</p>
@@ -3404,6 +3412,17 @@
           await wait(700);
         }
       })();
+    })();
+
+    /* ===== Muestra el nombre cuando las fuentes ya cargaron ===== */
+    (function () {
+      const show = () => document.documentElement.classList.remove('fl');
+      if (document.fonts && document.fonts.load) {
+        Promise.all([
+          document.fonts.load('400 1em "Potta One"'),
+          document.fonts.load('700 1em "Poppins"')
+        ]).then(show, show);
+      } else show();
     })();
 
     /* ===== Burger ===== */
