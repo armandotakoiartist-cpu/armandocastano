@@ -1541,6 +1541,28 @@
       color: var(--lav2);
     }
 
+    footer p.made {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      color: rgba(245, 240, 232, .7);
+      font-size: .78rem;
+    }
+
+    footer p.made img {
+      width: auto;
+      height: 26px;
+      display: block;
+    }
+
+    footer p.made b {
+      color: var(--off);
+      letter-spacing: .04em;
+    }
+
     footer p {
       color: rgba(245, 240, 232, .5);
       font-size: .7rem;
@@ -1677,6 +1699,12 @@
     }
 
     #lb-stage.drag img { transition: none; }
+
+    #lb.logo #lb-img {
+      background: #fff;
+      padding: clamp(16px, 3vw, 40px);
+      border-radius: 14px;
+    }
 
     #lb .zt {
       position: absolute;
@@ -2202,6 +2230,11 @@
       </a>
     </div>
     <p data-en="© 2026 Armando Castaño · All rights reserved">© 2026 Armando Castaño · Todos los derechos reservados</p>
+    <p class="made">
+      <span data-en="Website made by">Página realizada por</span>
+      <img src="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocasta-odise-adorvisual/main/Recurso%20133.png" alt="Meiw Creative" height="26">
+      <b>Meiw Creative</b>
+    </p>
   </footer>
 
   <!-- WHATSAPP FLOTANTE -->
@@ -2247,7 +2280,6 @@
     // [nombre, subtítulo ES, subtítulo EN, etiqueta ES, etiqueta EN, descripción ES, descripción EN]
     const PROJECTS = [
       ["Servimeters", "Diseño UI, landing pages y multimedia", "UI Design, Landing Pages & Multimedia", "Diseño UI · 2024", "UI Design · 2024", "Diseño UI y landing pages, edición de reels y multimedia para redes sociales, cursos y webinars, además de folletos, flyers y stand para ferias.", "UI design and landing pages, reel editing and multimedia for social media, courses and webinars, plus brochures, flyers and trade-show stand."],
-      ["Hierros y Cementos Social Media", "Carruseles para redes sociales", "Social Media Carousels", "Social Media", "Social Media", "Diseño de carruseles y contenido para las redes sociales de Hierros y Cementos.", "Carousel and content design for the Hierros y Cementos social media channels."],
       ["Branding de marcas", "Identidad visual para varias marcas", "Visual identity for multiple brands", "Branding", "Branding", "Selección de proyectos de branding: logotipos, aplicaciones y piezas gráficas para distintas marcas.", "A selection of branding projects: logos, applications and graphic pieces for different brands."],
       ["CCR", "Manual de marca y sistema visual", "Brand Guidelines & Visual System", "Rebranding · 2022", "Rebranding · 2022", "Rebranding completo, manual de marca y aplicación de la identidad visual.", "Complete rebranding, brand manual and visual identity application."],
       ["Hangar", "Branding y piezas publicitarias", "Branding & Advertising Pieces", "Branding", "Branding", "Identidad de marca, publicidad y volantes para Hangar Emprendedor.", "Brand identity, advertising and flyers for Hangar Emprendedor."],
@@ -2348,14 +2380,6 @@
           "stories_11zon.webp"
         ])
       ],
-      "Hierros y Cementos Social Media": gh("main", [
-        "Carruseles-Hierros-y-Cementos_1_.webp",
-        "Carruseles-Hierros-y-Cementos.webp",
-        "Carruseles-Hierros-y-Cementos_2_.webp",
-        "Carruseles-Hierros-y-Cementos_3_.webp",
-        "Carruseles-Hierros-y-Cementos_5_.webp",
-        "Carruseles-Hierros-y-Cementos_6_.webp"
-      ]),
       "Branding de marcas": BRANDS.map(b => GH + b[0] + "/" + b[1]),
       "CCR": gh("45945061208c10e0496910400cba1f02f2be1930", [
         "%5BJotako%5D%20Behance%20CCR-10-convertido-de-png.webp",
@@ -2983,7 +3007,7 @@
               <button class="carousel-nav-btn prev" aria-label="Logotipo anterior">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
               </button>
-              <img id="stage-img-${folder.id}" src="${folder.images[0]}" alt="${folder.label} logotipo" data-bs-toggle="modal" data-bs-target="#lightboxModal">
+              <img id="stage-img-${folder.id}" src="${folder.images[0]}" alt="${folder.label} logotipo" title="Clic para ampliar">
               <button class="carousel-nav-btn next" aria-label="Logotipo siguiente">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
@@ -2996,6 +3020,7 @@
 
         contentEl.appendChild(pane);
 
+        pane.querySelector('.carousel-stage img').addEventListener('click', () => openLB(folder.images, carouselState[folder.id], LANG === 'es' ? folder.label : (folder.labelEn || folder.label), true));
         pane.querySelector('.carousel-nav-btn.prev').addEventListener('click', () => goTo(folder, carouselState[folder.id] - 1));
         pane.querySelector('.carousel-nav-btn.next').addEventListener('click', () => goTo(folder, carouselState[folder.id] + 1));
         pane.querySelectorAll('.thumb-item').forEach(thumb => {
@@ -3082,8 +3107,9 @@
       resetZoom();
     }
 
-    function openLB(imgs, idx, title = '') {
+    function openLB(imgs, idx, title = '', onWhite = false) {
       lbImgs = imgs; lbIdx = idx; lbTitle = title;
+      lb.classList.toggle('logo', !!onWhite); // logotipos: fondo blanco para que se vean bien
       lb.hidden = false;
       document.body.style.overflow = 'hidden';
       renderLB();
