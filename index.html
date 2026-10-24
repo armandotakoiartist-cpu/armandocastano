@@ -3218,6 +3218,21 @@
       window.addEventListener('resize', () => { if (!lb.hidden) applyZoom(); });
     }
 
+    /* ===== CV descargable por idioma ===== */
+    const CV_BASE = "https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocastano/HEAD/";
+    const CV_FILES = {
+      es: { file: "Diseñador Gráfico y Visual - Armando Castaño CV 2026.pdf", name: "Armando Castaño - CV 2026.pdf" },
+      en: { file: "Graphic and Visual Designer - Armando Castano CV 2026 EN.pdf", name: "Armando Castaño - CV 2026 (EN).pdf" }
+    };
+    function updateCv() {
+      const a = document.getElementById('cv-link');
+      if (!a) return;
+      const c = CV_FILES[LANG] || CV_FILES.es;
+      a.href = CV_BASE + encodeURIComponent(c.file);
+      a.setAttribute('download', c.name);
+    }
+    updateCv();
+
     /* ===== Idioma ===== */
     const langBtn = $('#lang');
     const langWrap = $('#langWrap');
@@ -3228,6 +3243,7 @@
       $('#l-en').classList.toggle('on', LANG === 'en');
       $('#lang-cur').textContent = LANG.toUpperCase();
       document.documentElement.lang = LANG;
+      updateCv();
       renderAll();
       $$('[data-en]').forEach(el => {
         if (!el.dataset.es) el.dataset.es = el.textContent;
