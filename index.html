@@ -2138,7 +2138,7 @@
             <span data-en="Corporate Comms">Comunicación Corporativa</span>
             <span data-en="Creative Direction">Dirección Creativa</span>
           </div>
-          <a class="pill outline" href="Dise%C3%B1ador%20Gr%C3%A1fico%20y%20Visual%20-%20Armando%20Casta%C3%B1o%20CV%202026.pdf" download="Armando Castaño - CV 2026.pdf">
+          <a class="pill outline" id="cv-link" href="https://raw.githubusercontent.com/armandotakoiartist-cpu/armandocastano/HEAD/Dise%C3%B1ador%20Gr%C3%A1fico%20y%20Visual%20-%20Armando%20Casta%C3%B1o%20CV%202026.pdf" download="Armando Castaño - CV 2026.pdf" target="_blank" rel="noopener">
             <span data-en="Download CV">Descargar CV</span>
           </a>
         </div>
@@ -3468,6 +3468,31 @@
         banner.style.setProperty('--my', y);
       });
     }
+
+    /* ===== Descarga del CV desde GitHub =====
+       El atributo "download" se ignora en enlaces de otro dominio, así que se
+       baja el PDF como archivo y se guarda; si falla, abre el enlace normal. */
+    (function () {
+      const a = document.getElementById('cv-link');
+      if (!a) return;
+      a.addEventListener('click', async e => {
+        e.preventDefault();
+        try {
+          const r = await fetch(a.href, { cache: 'no-cache' });
+          if (!r.ok) throw new Error(r.status);
+          const url = URL.createObjectURL(await r.blob());
+          const t = document.createElement('a');
+          t.href = url;
+          t.download = a.getAttribute('download') || 'CV.pdf';
+          document.body.appendChild(t);
+          t.click();
+          t.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 4000);
+        } catch (_) {
+          window.open(a.href, '_blank', 'noopener');
+        }
+      });
+    })();
 
     /* ===== Formulario (demo) ===== */
     const form = $('#form');
